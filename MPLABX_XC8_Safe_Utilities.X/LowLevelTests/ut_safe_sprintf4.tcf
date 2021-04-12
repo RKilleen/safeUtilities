@@ -1,0 +1,204 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 1
+$
+$ Test Case: 1	Procedure = safe_sprintf	4
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check the one path through the function safe_sprintf4.
+    # End Text
+    
+    # Begin Attributes
+
+      Sequence Name = safe_sprintf4
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_sprintf.c
+      Procedure = safe_sprintf4
+      Procedure Number = 6
+
+      # Begin Declarations
+
+static char_t  ldra_qq_lv_5[10];
+static const char_t  ldra_qq_lv_6[10] = {0};
+
+      # End Declarations
+
+        # Begin Variable
+
+          Name = str4
+          Decl_type = char_t []
+          Usage = Z
+          Value = ldra_qq_lv_5
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = format4
+          Decl_type = const char_t []
+          Usage = Z
+          Value = ldra_qq_lv_6
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = d14
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = d24
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = d34
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = d44
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = str4
+          Decl_type = char_t []
+          Usage = O
+          TBrun Analysis = Suspended
+
+        # End Removed Variable
+
+      # Begin TC Stub
+
+        Procedure = safe_sprintf
+  Overloading = Prototype
+
+  # Begin Overloading
+char_t []
+const char_t []
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+  # End Overloading
+
+        # Begin TC Stub Return Value
+
+          Name = %
+          Type = bool
+          Value = false
+
+        # End TC Stub Return Value
+
+      # End TC Stub
+
+    # End Test Case
+
+# Begin Isolated Procedure
+
+  File = .\safe_sprintf.c
+  Procedure = safe_sprintf4
+  Procedure Number = 6
+
+# End Isolated Procedure
+
+    # Begin Local Conversions
+I
+bool
+ldra_qq_bool_convert
+C:\LDRA_Toolsuite\c\ctbrunlib.h
+    # End Local Conversions
+# Begin Stub
+
+  Procedure = safe_sprintf
+  Method = Managed
+  Overloading = Prototype
+
+  # Begin Overloading
+char_t []
+const char_t []
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+  # End Overloading
+
+  # Begin MS Properties
+
+    # Begin Declarations
+
+    # End Declarations
+
+  # End MS Properties
+
+# End Stub
+
+# Begin Selected Files from Set
+
+.\safe_sprintf.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_sprintf.c
+
+# End White Files

@@ -1,0 +1,36 @@
+
+ # Begin Testbed Set
+
+ SET_TYPE = SYSTEM
+ SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\main.c
+      File = C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_string.c
+      File = C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+      File = C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_compress.c
+
+    # End Source Files
+
+    # Begin Sysearch Include File Entries
+
+      SearchPath = C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X
+      IgnoreInclude_300 = ldra_port_pragmas.h
+
+    # End Sysearch Include File Entries
+
+    # Begin Sysppvar Preprocessor Macros
+
+      MacroEntry = #define __16LF18856 1
+
+      # Begin Common Preprocessor Macros
+
+        MacroEntryGSppv = #define __XC8 1
+        MacroEntryGSppv = #define __PICC18__ 1
+
+      # End Common Preprocessor Macros
+
+    # End Sysppvar Preprocessor Macros
+ 
+ # End Testbed Set

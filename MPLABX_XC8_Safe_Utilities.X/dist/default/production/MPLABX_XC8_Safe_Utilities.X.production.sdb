@@ -1,0 +1,250 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF18856 ]
+[d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"8 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"6 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_compress.c
+[v _safe_compress safe_compress `(uc  1 e 1 0 ]
+"21
+[v _safe_uncompress safe_uncompress `(uc  1 e 1 0 ]
+"21 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+[v _safe_int_to_dec safe_int_to_dec `(uc  1 s 1 safe_int_to_dec ]
+"58
+[v _safe_sprintf safe_sprintf `(uc  1 s 1 safe_sprintf ]
+"143
+[v _safe_sprintf1 safe_sprintf1 `(uc  1 e 1 0 ]
+"150
+[v _safe_sprintf2 safe_sprintf2 `(uc  1 e 1 0 ]
+"157
+[v _safe_sprintf3 safe_sprintf3 `(uc  1 e 1 0 ]
+"164
+[v _safe_sprintf4 safe_sprintf4 `(uc  1 e 1 0 ]
+"6 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_string.c
+[v _safe_string_length safe_string_length `(i  1 e 2 0 ]
+"21
+[v _safe_string_compare safe_string_compare `(uc  1 e 1 0 ]
+"8 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"10
+[v main@my_string my_string `[64]uc  1 a 64 0 ]
+"14
+[v main@exp_msg exp_msg `[64]uc  1 a 64 0 ]
+"13
+[v main@comp_msg comp_msg `[64]uc  1 a 64 0 ]
+"15
+[v main@len_comp_msg len_comp_msg `i  1 a 2 69 ]
+"12
+[v main@len_msg len_msg `i  1 a 2 67 ]
+"11
+[v main@msg msg `DC[20]uc  1 s 20 msg ]
+"34
+} 0
+"21 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_compress.c
+[v _safe_uncompress safe_uncompress `(uc  1 e 1 0 ]
+{
+[v safe_uncompress@aString aString `*.5uc  1 a 1 wreg ]
+[v safe_uncompress@aString aString `*.5uc  1 a 1 wreg ]
+[v safe_uncompress@anArray anArray `*.4DCuc  1 p 1 0 ]
+[v safe_uncompress@arraySize arraySize `DCi  1 p 2 1 ]
+"24
+[v safe_uncompress@aString aString `*.5uc  1 a 1 3 ]
+"31
+} 0
+"6 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_string.c
+[v _safe_string_length safe_string_length `(i  1 e 2 0 ]
+{
+"7
+[v safe_string_length@n n `i  1 a 2 3 ]
+"6
+[v safe_string_length@aString aString `*.25DCuc  1 p 2 0 ]
+"14
+} 0
+"21
+[v _safe_string_compare safe_string_compare `(uc  1 e 1 0 ]
+{
+"28
+[v safe_string_compare@i i `i  1 a 2 7 ]
+"27
+[v safe_string_compare@loop loop `uc  1 a 1 6 ]
+"21
+[v safe_string_compare@aString1 aString1 `*.25DCuc  1 p 2 0 ]
+[v safe_string_compare@aString2 aString2 `*.5DCuc  1 p 1 2 ]
+[v safe_string_compare@max_chars max_chars `DCi  1 p 2 3 ]
+"47
+} 0
+"164 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+[v _safe_sprintf4 safe_sprintf4 `(uc  1 e 1 0 ]
+{
+[v safe_sprintf4@str4 str4 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf4@str4 str4 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf4@format4 format4 `*.25DCuc  1 p 2 56 ]
+[v safe_sprintf4@d14 d14 `DCi  1 p 2 58 ]
+[v safe_sprintf4@d24 d24 `DCi  1 p 2 60 ]
+[v safe_sprintf4@d34 d34 `DCi  1 p 2 62 ]
+[v safe_sprintf4@d44 d44 `DCi  1 p 2 64 ]
+[v safe_sprintf4@str4 str4 `*.5uc  1 a 1 13 ]
+"166
+} 0
+"157
+[v _safe_sprintf3 safe_sprintf3 `(uc  1 e 1 0 ]
+{
+[v safe_sprintf3@str3 str3 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf3@str3 str3 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf3@format3 format3 `*.25DCuc  1 p 2 56 ]
+[v safe_sprintf3@d13 d13 `DCi  1 p 2 58 ]
+[v safe_sprintf3@d23 d23 `DCi  1 p 2 60 ]
+[v safe_sprintf3@d33 d33 `DCi  1 p 2 62 ]
+[v safe_sprintf3@str3 str3 `*.5uc  1 a 1 13 ]
+"159
+} 0
+"150
+[v _safe_sprintf2 safe_sprintf2 `(uc  1 e 1 0 ]
+{
+[v safe_sprintf2@str2 str2 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf2@str2 str2 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf2@format2 format2 `*.25DCuc  1 p 2 56 ]
+[v safe_sprintf2@d12 d12 `DCi  1 p 2 58 ]
+[v safe_sprintf2@d22 d22 `DCi  1 p 2 60 ]
+[v safe_sprintf2@str2 str2 `*.5uc  1 a 1 13 ]
+"152
+} 0
+"143
+[v _safe_sprintf1 safe_sprintf1 `(uc  1 e 1 0 ]
+{
+[v safe_sprintf1@str1 str1 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf1@str1 str1 `*.5uc  1 a 1 wreg ]
+[v safe_sprintf1@format1 format1 `*.25DCuc  1 p 2 56 ]
+[v safe_sprintf1@d11 d11 `DCi  1 p 2 58 ]
+[v safe_sprintf1@str1 str1 `*.5uc  1 a 1 13 ]
+"145
+} 0
+"58
+[v _safe_sprintf safe_sprintf `(uc  1 s 1 safe_sprintf ]
+{
+[v safe_sprintf@string string `*.5uc  1 a 1 wreg ]
+"79
+[v safe_sprintf@width width `i  1 a 2 49 ]
+"67
+[v safe_sprintf@digit digit `[4]i  1 a 8 34 ]
+"69
+[v safe_sprintf@count count `i  1 a 2 47 ]
+"66
+[v safe_sprintf@digits digits `i  1 a 2 44 ]
+"68
+[v safe_sprintf@max max `i  1 a 2 42 ]
+"60
+[v safe_sprintf@ifmt ifmt `i  1 a 2 53 ]
+"61
+[v safe_sprintf@istr istr `i  1 a 2 51 ]
+"59
+[v safe_sprintf@status2 status2 `uc  1 a 1 46 ]
+"58
+[v safe_sprintf@string string `*.5uc  1 a 1 wreg ]
+[v safe_sprintf@format format `*.25DCuc  1 p 2 17 ]
+[v safe_sprintf@aCount aCount `DCi  1 p 2 19 ]
+[v safe_sprintf@d1 d1 `DCi  1 p 2 21 ]
+[v safe_sprintf@d2 d2 `DCi  1 p 2 23 ]
+[v safe_sprintf@d3 d3 `DCi  1 p 2 25 ]
+[v safe_sprintf@d4 d4 `DCi  1 p 2 27 ]
+"60
+[v safe_sprintf@string string `*.5uc  1 a 1 55 ]
+"138
+} 0
+"21
+[v _safe_int_to_dec safe_int_to_dec `(uc  1 s 1 safe_int_to_dec ]
+{
+[v safe_int_to_dec@string1 string1 `*.5uc  1 a 1 wreg ]
+"39
+[v safe_int_to_dec@remainder remainder `i  1 a 2 8 ]
+"27
+[v safe_int_to_dec@value value `i  1 a 2 15 ]
+"28
+[v safe_int_to_dec@index index `i  1 a 2 12 ]
+"30
+[v safe_int_to_dec@neg neg `uc  1 a 1 11 ]
+"22
+[v safe_int_to_dec@status1 status1 `uc  1 a 1 10 ]
+"21
+[v safe_int_to_dec@string1 string1 `*.5uc  1 a 1 wreg ]
+[v safe_int_to_dec@offset offset `DCi  1 p 2 4 ]
+[v safe_int_to_dec@aValue aValue `DCi  1 p 2 6 ]
+"24
+[v safe_int_to_dec@string1 string1 `*.5uc  1 a 1 14 ]
+"52
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+[v ___awdiv@dividend dividend `i  1 p 2 8 ]
+"41
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 2 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
+"51
+} 0
+"6 C:\safeUtilities\MPLABX_XC8_Safe_Utilities.X\safe_compress.c
+[v _safe_compress safe_compress `(uc  1 e 1 0 ]
+{
+[v safe_compress@anArray1 anArray1 `*.4uc  1 a 1 wreg ]
+[v safe_compress@anArray1 anArray1 `*.4uc  1 a 1 wreg ]
+[v safe_compress@aString1 aString1 `*.25DCuc  1 p 2 0 ]
+"9
+[v safe_compress@anArray1 anArray1 `*.4uc  1 a 1 2 ]
+"16
+} 0

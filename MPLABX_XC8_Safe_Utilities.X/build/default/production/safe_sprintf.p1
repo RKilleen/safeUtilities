@@ -1,0 +1,461 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef __int24 int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 52: typedef unsigned char uint8_t;
+[; ;stdint.h: 58: typedef unsigned int uint16_t;
+[; ;stdint.h: 65: typedef __uint24 uint24_t;
+[; ;stdint.h: 72: typedef unsigned long int uint32_t;
+[; ;stdint.h: 88: typedef signed char int_least8_t;
+[; ;stdint.h: 96: typedef signed int int_least16_t;
+[; ;stdint.h: 109: typedef __int24 int_least24_t;
+[; ;stdint.h: 118: typedef signed long int int_least32_t;
+[; ;stdint.h: 136: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 143: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 154: typedef __uint24 uint_least24_t;
+[; ;stdint.h: 162: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 181: typedef signed char int_fast8_t;
+[; ;stdint.h: 188: typedef signed int int_fast16_t;
+[; ;stdint.h: 200: typedef __int24 int_fast24_t;
+[; ;stdint.h: 208: typedef signed long int int_fast32_t;
+[; ;stdint.h: 224: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 230: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 240: typedef __uint24 uint_fast24_t;
+[; ;stdint.h: 247: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 268: typedef int32_t intmax_t;
+[; ;stdint.h: 282: typedef uint32_t uintmax_t;
+[; ;stdint.h: 289: typedef int16_t intptr_t;
+[; ;stdint.h: 294: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;safe_types.h: 7: typedef char char_t;
+[; ;safe_sprintf.h: 15: extern bool safe_sprintf1 (char_t str1[], const char_t format1[], const int16_t d11);
+[; ;safe_sprintf.h: 16: extern bool safe_sprintf2 (char_t str2[], const char_t format2[], const int16_t d12, const int16_t d22);
+[; ;safe_sprintf.h: 17: extern bool safe_sprintf3 (char_t str3[], const char_t format3[], const int16_t d13, const int16_t d23, const int16_t d33);
+[; ;safe_sprintf.h: 18: extern bool safe_sprintf4 (char_t str4[], const char_t format4[], const int16_t d14, const int16_t d24, const int16_t d34, const int16_t d44);
+[; ;safe_sprintf.c: 13: static bool safe_int_to_dec (char_t string1[], const int16_t offset, const int16_t aValue);
+[; ;safe_sprintf.c: 14: static bool safe_sprintf (char_t string[], const char_t format[], const int16_t aCount, const int16_t d1, const int16_t d2, const int16_t d3, const int16_t d4);
+"21 safe_sprintf.c
+[v _safe_int_to_dec `(uc ~T0 @X0 1 sf3`*uc`Ci`Ci ]
+{
+[; ;safe_sprintf.c: 21: static bool safe_int_to_dec (char_t string1[], const int16_t offset, const int16_t aValue) {
+[e :U _safe_int_to_dec ]
+[v _string1 `*uc ~T0 @X0 1 r1 ]
+[v _offset `Ci ~T0 @X0 1 r2 ]
+[v _aValue `Ci ~T0 @X0 1 r3 ]
+[f ]
+"22
+[v _status1 `uc ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 22: bool status1;
+[; ;safe_sprintf.c: 24: if ( string1 == (char_t*)(0)) {
+"24
+[e $ ! == _string1 -> -> 0 `i `*uc 2  ]
+{
+[; ;safe_sprintf.c: 25: status1 = 0;
+"25
+[e = _status1 -> -> 0 `i `uc ]
+"26
+}
+[; ;safe_sprintf.c: 26: } else {
+[e $U 3  ]
+[e :U 2 ]
+{
+"27
+[v _value `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 27: int16_t value=aValue;
+[e = _value _aValue ]
+"28
+[v _index `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 28: int16_t index=offset;
+[e = _index _offset ]
+"30
+[v _neg `uc ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 30: bool neg = (value < 0);
+[e = _neg -> -> < _value -> 0 `i `i `uc ]
+[; ;safe_sprintf.c: 31: if (neg) {
+"31
+[e $ ! != -> _neg `i -> -> -> 0 `i `uc `i 4  ]
+{
+[; ;safe_sprintf.c: 32: value = -value;
+"32
+[e = _value -U _value ]
+"33
+}
+[e :U 4 ]
+[; ;safe_sprintf.c: 33: }
+[; ;safe_sprintf.c: 34: status1 = 1;
+"34
+[e = _status1 -> -> 1 `i `uc ]
+[; ;safe_sprintf.c: 37: do {
+"37
+[e :U 7 ]
+{
+"39
+[v _remainder `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 39: int16_t remainder = (value % 10);
+[e = _remainder % _value -> 10 `i ]
+[; ;safe_sprintf.c: 40: remainder += (int16_t)'0';
+"40
+[e =+ _remainder -> -> 48 `ui `i ]
+[; ;safe_sprintf.c: 41: --index;
+"41
+[e =- _index -> 1 `i ]
+[; ;safe_sprintf.c: 42: string1[index] = (char_t)remainder;
+"42
+[e = *U + _string1 * -> _index `x -> -> # *U _string1 `i `x -> _remainder `uc ]
+[; ;safe_sprintf.c: 43: value /= 10;
+"43
+[e =/ _value -> -> 10 `uc `i ]
+"44
+}
+[; ;safe_sprintf.c: 44: } while (value>0);
+[e $ > _value -> 0 `i 7  ]
+[e :U 6 ]
+[; ;safe_sprintf.c: 46: if (neg) {
+"46
+[e $ ! != -> _neg `i -> -> -> 0 `i `uc `i 8  ]
+{
+[; ;safe_sprintf.c: 47: --index;
+"47
+[e =- _index -> 1 `i ]
+[; ;safe_sprintf.c: 48: string1[index] = '-';
+"48
+[e = *U + _string1 * -> _index `x -> -> # *U _string1 `i `x -> -> 45 `ui `uc ]
+"49
+}
+[e :U 8 ]
+"50
+}
+[e :U 3 ]
+[; ;safe_sprintf.c: 49: }
+[; ;safe_sprintf.c: 50: }
+[; ;safe_sprintf.c: 51: return status1;
+"51
+[e ) _status1 ]
+[e $UE 1  ]
+[; ;safe_sprintf.c: 52: }
+"52
+[e :UE 1 ]
+}
+"58
+[v _safe_sprintf `(uc ~T0 @X0 1 sf7`*uc`*Cuc`Ci`Ci`Ci`Ci`Ci ]
+{
+[; ;safe_sprintf.c: 58: static bool safe_sprintf (char_t string[], const char_t format[], const int16_t aCount, const int16_t d1, const int16_t d2, const int16_t d3, const int16_t d4) {
+[e :U _safe_sprintf ]
+[v _string `*uc ~T0 @X0 1 r1 ]
+[v _format `*Cuc ~T0 @X0 1 r2 ]
+[v _aCount `Ci ~T0 @X0 1 r3 ]
+[v _d1 `Ci ~T0 @X0 1 r4 ]
+[v _d2 `Ci ~T0 @X0 1 r5 ]
+[v _d3 `Ci ~T0 @X0 1 r6 ]
+[v _d4 `Ci ~T0 @X0 1 r7 ]
+[f ]
+"59
+[v _status2 `uc ~T0 @X0 1 a ]
+"60
+[v _ifmt `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 59: bool status2;
+[; ;safe_sprintf.c: 60: int16_t ifmt=0;
+[e = _ifmt -> 0 `i ]
+"61
+[v _istr `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 61: int16_t istr=0;
+[e = _istr -> 0 `i ]
+[; ;safe_sprintf.c: 63: if ((format == (char_t*)(0)) || (string == (char_t*)(0))) {
+"63
+[e $ ! || == _format -> -> -> 0 `i `*uc `*Cuc == _string -> -> 0 `i `*uc 10  ]
+{
+[; ;safe_sprintf.c: 64: status2 = 0;
+"64
+[e = _status2 -> -> 0 `i `uc ]
+"65
+}
+[; ;safe_sprintf.c: 65: } else {
+[e $U 11  ]
+[e :U 10 ]
+{
+"66
+[v _digits `i ~T0 @X0 1 a ]
+"67
+[v _digit `i ~T0 @X0 -> 4 `i a ]
+"68
+[v _max `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 66: int16_t digits;
+[; ;safe_sprintf.c: 67: int16_t digit[4];
+[; ;safe_sprintf.c: 68: int16_t max = aCount;
+[e = _max _aCount ]
+"69
+[v _count `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 69: int16_t count = aCount;
+[e = _count _aCount ]
+[; ;safe_sprintf.c: 70: digit[0] = d1;
+"70
+[e = *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux _d1 ]
+[; ;safe_sprintf.c: 71: digit[1] = d2;
+"71
+[e = *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux _d2 ]
+[; ;safe_sprintf.c: 72: digit[2] = d3;
+"72
+[e = *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux _d3 ]
+[; ;safe_sprintf.c: 73: digit[3] = d4;
+"73
+[e = *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux _d4 ]
+[; ;safe_sprintf.c: 74: status2 = 1;
+"74
+[e = _status2 -> -> 1 `i `uc ]
+[; ;safe_sprintf.c: 75: do {
+"75
+[e :U 14 ]
+{
+[; ;safe_sprintf.c: 78: if ((format[ifmt] == '%') && (count>0)) {
+"78
+[e $ ! && == -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `ui -> 37 `ui > _count -> 0 `i 15  ]
+{
+"79
+[v _width `i ~T0 @X0 1 a ]
+[; ;safe_sprintf.c: 79: int16_t width = 0;
+[e = _width -> 0 `i ]
+[; ;safe_sprintf.c: 80: ifmt++;
+"80
+[e ++ _ifmt -> 1 `i ]
+[; ;safe_sprintf.c: 82: if ( ((int8_t)(format[ifmt]) >= (int8_t)'1') &&
+[; ;safe_sprintf.c: 83: ((int8_t)(format[ifmt]) <= (int8_t)'9') ) {
+"83
+[e $ ! && >= -> -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `c `i -> -> -> 49 `ui `c `i <= -> -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `c `i -> -> -> 57 `ui `c `i 16  ]
+{
+[; ;safe_sprintf.c: 84: width = (int16_t)format[ifmt] - (int16_t)'0';
+"84
+[e = _width - -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `i -> -> 48 `ui `i ]
+[; ;safe_sprintf.c: 85: ifmt++;
+"85
+[e ++ _ifmt -> 1 `i ]
+[; ;safe_sprintf.c: 87: if ( ((int8_t)(format[ifmt]) >= (int8_t)'0') &&
+[; ;safe_sprintf.c: 88: ((int8_t)(format[ifmt]) <= (int8_t)'9') ) {
+"88
+[e $ ! && >= -> -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `c `i -> -> -> 48 `ui `c `i <= -> -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `c `i -> -> -> 57 `ui `c `i 17  ]
+{
+[; ;safe_sprintf.c: 89: width *= 10;
+"89
+[e =* _width -> 10 `i ]
+[; ;safe_sprintf.c: 90: width += (int16_t)format[ifmt] - (int16_t)'0';
+"90
+[e =+ _width - -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `i -> -> 48 `ui `i ]
+[; ;safe_sprintf.c: 91: ifmt++;
+"91
+[e ++ _ifmt -> 1 `i ]
+"92
+}
+[e :U 17 ]
+"93
+}
+[; ;safe_sprintf.c: 92: }
+[; ;safe_sprintf.c: 93: } else {
+[e $U 18  ]
+[e :U 16 ]
+{
+[; ;safe_sprintf.c: 94: width = 1;
+"94
+[e = _width -> 1 `i ]
+[; ;safe_sprintf.c: 95: digits = digit[max-count];
+"95
+[e = _digits *U + &U _digit * -> -> - _max _count `ui `ux -> -> # *U &U _digit `ui `ux ]
+[; ;safe_sprintf.c: 101: while (digits > 9) {
+"101
+[e $U 19  ]
+[e :U 20 ]
+{
+[; ;safe_sprintf.c: 102: digits /= 10;
+"102
+[e =/ _digits -> -> 10 `uc `i ]
+[; ;safe_sprintf.c: 103: width++;
+"103
+[e ++ _width -> 1 `i ]
+"104
+}
+[e :U 19 ]
+"101
+[e $ > _digits -> 9 `i 20  ]
+[e :U 21 ]
+"105
+}
+[e :U 18 ]
+[; ;safe_sprintf.c: 104: }
+[; ;safe_sprintf.c: 105: }
+[; ;safe_sprintf.c: 107: while (width!=0) {
+"107
+[e $U 22  ]
+[e :U 23 ]
+{
+[; ;safe_sprintf.c: 108: string[istr] = ' ';
+"108
+[e = *U + _string * -> _istr `x -> -> # *U _string `i `x -> -> 32 `ui `uc ]
+[; ;safe_sprintf.c: 109: istr++;
+"109
+[e ++ _istr -> 1 `i ]
+[; ;safe_sprintf.c: 110: --width;
+"110
+[e =- _width -> 1 `i ]
+"111
+}
+[e :U 22 ]
+"107
+[e $ != _width -> 0 `i 23  ]
+[e :U 24 ]
+[; ;safe_sprintf.c: 111: }
+[; ;safe_sprintf.c: 113: if (format[ifmt] == 'd') {
+"113
+[e $ ! == -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `ui -> 100 `ui 25  ]
+{
+[; ;safe_sprintf.c: 114: ifmt++;
+"114
+[e ++ _ifmt -> 1 `i ]
+[; ;safe_sprintf.c: 115: status2 = safe_int_to_dec((char_t*)&string[0], istr, digit[max-count]);
+"115
+[e = _status2 ( _safe_int_to_dec (3 , , &U *U + _string * -> -> 0 `i `x -> -> # *U _string `i `x _istr *U + &U _digit * -> -> - _max _count `ui `ux -> -> # *U &U _digit `ui `ux ]
+[; ;safe_sprintf.c: 116: --count;
+"116
+[e =- _count -> 1 `i ]
+"117
+}
+[; ;safe_sprintf.c: 117: } else {
+[e $U 26  ]
+[e :U 25 ]
+{
+[; ;safe_sprintf.c: 119: string[0] = 'E';
+"119
+[e = *U + _string * -> -> 0 `i `x -> -> # *U _string `i `x -> -> 69 `ui `uc ]
+[; ;safe_sprintf.c: 120: string[1] = 'r';
+"120
+[e = *U + _string * -> -> 1 `i `x -> -> # *U _string `i `x -> -> 114 `ui `uc ]
+[; ;safe_sprintf.c: 121: string[2] = 'r';
+"121
+[e = *U + _string * -> -> 2 `i `x -> -> # *U _string `i `x -> -> 114 `ui `uc ]
+[; ;safe_sprintf.c: 122: string[3] = 'o';
+"122
+[e = *U + _string * -> -> 3 `i `x -> -> # *U _string `i `x -> -> 111 `ui `uc ]
+[; ;safe_sprintf.c: 123: string[4] = 'r';
+"123
+[e = *U + _string * -> -> 4 `i `x -> -> # *U _string `i `x -> -> 114 `ui `uc ]
+[; ;safe_sprintf.c: 124: istr=5;
+"124
+[e = _istr -> 5 `i ]
+[; ;safe_sprintf.c: 125: status2= 0;
+"125
+[e = _status2 -> -> 0 `i `uc ]
+"126
+}
+[e :U 26 ]
+"127
+}
+[; ;safe_sprintf.c: 126: }
+[; ;safe_sprintf.c: 127: } else {
+[e $U 27  ]
+[e :U 15 ]
+{
+[; ;safe_sprintf.c: 130: string[istr] = format[ifmt];
+"130
+[e = *U + _string * -> _istr `x -> -> # *U _string `i `x *U + _format * -> _ifmt `x -> -> # *U _format `i `x ]
+[; ;safe_sprintf.c: 131: istr++;
+"131
+[e ++ _istr -> 1 `i ]
+[; ;safe_sprintf.c: 132: ifmt++;
+"132
+[e ++ _ifmt -> 1 `i ]
+"133
+}
+[e :U 27 ]
+"134
+}
+[; ;safe_sprintf.c: 133: }
+[; ;safe_sprintf.c: 134: } while (status2 && (format[ifmt] != '\0'));
+[e $ && != -> _status2 `i -> -> -> 0 `i `uc `i != -> *U + _format * -> _ifmt `x -> -> # *U _format `i `x `ui -> 0 `ui 14  ]
+[e :U 13 ]
+[; ;safe_sprintf.c: 135: string[istr] = '\0';
+"135
+[e = *U + _string * -> _istr `x -> -> # *U _string `i `x -> -> 0 `ui `uc ]
+"136
+}
+[e :U 11 ]
+[; ;safe_sprintf.c: 136: }
+[; ;safe_sprintf.c: 137: return status2;
+"137
+[e ) _status2 ]
+[e $UE 9  ]
+[; ;safe_sprintf.c: 138: }
+"138
+[e :UE 9 ]
+}
+"143
+[v _safe_sprintf1 `(uc ~T0 @X0 1 ef3`*uc`*Cuc`Ci ]
+{
+[; ;safe_sprintf.c: 143: bool safe_sprintf1 (char_t str1[], const char_t format1[], const int16_t d11) {
+[e :U _safe_sprintf1 ]
+[v _str1 `*uc ~T0 @X0 1 r1 ]
+[v _format1 `*Cuc ~T0 @X0 1 r2 ]
+[v _d11 `Ci ~T0 @X0 1 r3 ]
+[f ]
+[; ;safe_sprintf.c: 144: return (safe_sprintf(str1, format1, 1, d11, d11, d11, d11));
+"144
+[e ) ( _safe_sprintf (4 , , , , , , _str1 _format1 -> 1 `i _d11 _d11 _d11 _d11 ]
+[e $UE 28  ]
+[; ;safe_sprintf.c: 145: }
+"145
+[e :UE 28 ]
+}
+"150
+[v _safe_sprintf2 `(uc ~T0 @X0 1 ef4`*uc`*Cuc`Ci`Ci ]
+{
+[; ;safe_sprintf.c: 150: bool safe_sprintf2 (char_t str2[], const char_t format2[], const int16_t d12, const int16_t d22) {
+[e :U _safe_sprintf2 ]
+[v _str2 `*uc ~T0 @X0 1 r1 ]
+[v _format2 `*Cuc ~T0 @X0 1 r2 ]
+[v _d12 `Ci ~T0 @X0 1 r3 ]
+[v _d22 `Ci ~T0 @X0 1 r4 ]
+[f ]
+[; ;safe_sprintf.c: 151: return (safe_sprintf(str2, format2, 2, d12, d22, d22, d22));
+"151
+[e ) ( _safe_sprintf (4 , , , , , , _str2 _format2 -> 2 `i _d12 _d22 _d22 _d22 ]
+[e $UE 29  ]
+[; ;safe_sprintf.c: 152: }
+"152
+[e :UE 29 ]
+}
+"157
+[v _safe_sprintf3 `(uc ~T0 @X0 1 ef5`*uc`*Cuc`Ci`Ci`Ci ]
+{
+[; ;safe_sprintf.c: 157: bool safe_sprintf3 (char_t str3[], const char_t format3[], const int16_t d13, const int16_t d23, const int16_t d33) {
+[e :U _safe_sprintf3 ]
+[v _str3 `*uc ~T0 @X0 1 r1 ]
+[v _format3 `*Cuc ~T0 @X0 1 r2 ]
+[v _d13 `Ci ~T0 @X0 1 r3 ]
+[v _d23 `Ci ~T0 @X0 1 r4 ]
+[v _d33 `Ci ~T0 @X0 1 r5 ]
+[f ]
+[; ;safe_sprintf.c: 158: return (safe_sprintf(str3, format3, 3, d13, d23, d33, d33));
+"158
+[e ) ( _safe_sprintf (4 , , , , , , _str3 _format3 -> 3 `i _d13 _d23 _d33 _d33 ]
+[e $UE 30  ]
+[; ;safe_sprintf.c: 159: }
+"159
+[e :UE 30 ]
+}
+"164
+[v _safe_sprintf4 `(uc ~T0 @X0 1 ef6`*uc`*Cuc`Ci`Ci`Ci`Ci ]
+{
+[; ;safe_sprintf.c: 164: bool safe_sprintf4 (char_t str4[], const char_t format4[], const int16_t d14, const int16_t d24, const int16_t d34, const int16_t d44) {
+[e :U _safe_sprintf4 ]
+[v _str4 `*uc ~T0 @X0 1 r1 ]
+[v _format4 `*Cuc ~T0 @X0 1 r2 ]
+[v _d14 `Ci ~T0 @X0 1 r3 ]
+[v _d24 `Ci ~T0 @X0 1 r4 ]
+[v _d34 `Ci ~T0 @X0 1 r5 ]
+[v _d44 `Ci ~T0 @X0 1 r6 ]
+[f ]
+[; ;safe_sprintf.c: 165: return ( safe_sprintf(str4, format4, 4, d14, d24, d34, d44) );
+"165
+[e ) ( _safe_sprintf (4 , , , , , , _str4 _format4 -> 4 `i _d14 _d24 _d34 _d44 ]
+[e $UE 31  ]
+[; ;safe_sprintf.c: 166: }
+"166
+[e :UE 31 ]
+}

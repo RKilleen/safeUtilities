@@ -1,0 +1,6 @@
+ ELEMENT(           0 )
+ ELEMENT(           1 )
+ ELEMENT(           2 )
+ #ifdef LASTELEMENT
+ ELEMENT(           3 )
+ #endif

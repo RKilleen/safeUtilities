@@ -1,0 +1,35 @@
+
+ # Begin Testbed Set
+
+ SET_TYPE = SYSTEM
+ SET_NAME = MPLABX_XC8_Safe_Utilities.X
+ GENERATED_BY = MPLABX Plugin
+
+    # Begin Source Files
+
+    File = C:/LDRA_Workarea/Examples/Tlps/Microchip/MPLABX_XC8_Workspace/MPLABX_XC8_Safe_Utilities.X/main.c
+    File = C:/LDRA_Workarea/Examples/Tlps/Microchip/MPLABX_XC8_Workspace/MPLABX_XC8_Safe_Utilities.X/safe_compress.c
+    File = C:/LDRA_Workarea/Examples/Tlps/Microchip/MPLABX_XC8_Workspace/MPLABX_XC8_Safe_Utilities.X/safe_sprintf.c
+    File = C:/LDRA_Workarea/Examples/Tlps/Microchip/MPLABX_XC8_Workspace/MPLABX_XC8_Safe_Utilities.X/safe_string.c
+
+    # End Source Files
+
+    # Begin Sysearch Include File Entries
+
+    SearchPath = C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X
+
+    # End Sysearch Include File Entries
+
+    # Begin Sysppvar Preprocessor Macros
+
+    MacroEntry = __16LF18856
+    MacroEntry = TLP_TEST
+    MacroEntry = __XC8__
+
+    # End Sysppvar Preprocessor Macros
+
+    # Begin Options
+
+    # End Options
+
+ # End Testbed Set

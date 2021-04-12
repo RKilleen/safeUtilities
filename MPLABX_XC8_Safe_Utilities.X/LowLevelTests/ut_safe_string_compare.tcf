@@ -1,0 +1,387 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 7
+$
+$ Test Case: 1	Procedure = safe_string_compare	Description = invalid string1
+$ Test Case: 2	Procedure = safe_string_compare	Description = invalid string2
+$ Test Case: 3	Procedure = safe_string_compare	Description = empty strings
+$ Test Case: 4	Procedure = safe_string_compare	Description = max_chars 0
+$ Test Case: 5	Procedure = safe_string_compare	Description = max_chars 4
+$ Test Case: 6	Procedure = safe_string_compare	Description = 10th character differs, but max_chars 9
+$ Test Case: 7	Procedure = safe_string_compare	Description = 10th character differs, but max_chars 10
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check all 7 paths through the function safe_string_compare.
+    # End Text
+
+    # Begin Attributes
+
+      Sequence Name = safe_string_compare
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = invalid string1
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = (const char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 2
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = invalid string2
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = (const char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 3
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = empty strings
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = ""
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = ""
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 1
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 4
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = max_chars 0
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 5
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = max_chars 4
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 6
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = 10th character differs, but max_chars 9
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "QuickBrowbFox"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "QuickBrownFox"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 9
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 7
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_compare
+      Procedure Number = 2
+      Description = 10th character differs, but max_chars 10
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "QuickBrowbFox"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString2
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "QuickBrownFox"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = max_chars
+          Decl_type = int16_t
+          Usage = Z
+          Value = 10
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+    # End Test Case
+
+# Begin Isolated Procedure
+
+  File = .\safe_string.c
+  Procedure = safe_string_compare
+  Procedure Number = 2
+
+# End Isolated Procedure
+
+# Begin Selected Files from Set
+
+.\safe_string.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_string.c
+
+# End White Files

@@ -1,0 +1,785 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 3
+$
+$ Test Case: 1	Procedure = safe_int_to_dec	Description = 12345
+$ Test Case: 2	Procedure = safe_int_to_dec	Description = -12345
+$ Test Case: 3	Procedure = safe_int_to_dec	Description = invalid string
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check all 3 paths through the function safe_int_to_dec.
+    # End Text
+
+    # Begin Attributes
+
+      Sequence Name = safe_int_to_dec
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_sprintf.c
+      Procedure = safe_int_to_dec
+      Procedure Number = 1
+      Description = 12345
+
+        # Begin Variable
+
+          Name = string1
+          Decl_type = char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = offset
+          Decl_type = const int16_t
+          Usage = Z
+          Value = 5
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aValue
+          Decl_type = int16_t
+          Usage = Z
+          Value = 12345
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[0]
+          Decl_type = char_t
+          Usage = H
+          Value = '1'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[1]
+          Decl_type = char_t
+          Usage = H
+          Value = '2'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[2]
+          Decl_type = char_t
+          Usage = H
+          Value = '3'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[3]
+          Decl_type = char_t
+          Usage = H
+          Value = '4'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[4]
+          Decl_type = char_t
+          Usage = H
+          Value = '5'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[5]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[6]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[7]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[8]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[9]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[10]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[11]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[12]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[13]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[14]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[15]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[0]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[1]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[2]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[3]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[4]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[5]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[6]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[7]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[8]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[9]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[10]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[11]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[12]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[13]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[14]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[15]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = string1
+          Decl_type = char_t []
+          Usage = O
+          Value = (char_t*)(0)
+
+        # End Removed Variable
+
+    # End Test Case
+
+$ Test Case: 2
+    # Begin Test Case
+
+      File = .\safe_sprintf.c
+      Procedure = safe_int_to_dec
+      Procedure Number = 1
+      Description = -12345
+
+        # Begin Variable
+
+          Name = string1
+          Decl_type = char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = offset
+          Decl_type = const int16_t
+          Usage = Z
+          Value = 6
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aValue
+          Decl_type = int16_t
+          Usage = Z
+          Value = -12345
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[0]
+          Decl_type = char_t
+          Usage = H
+          Value = '-'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[1]
+          Decl_type = char_t
+          Usage = H
+          Value = '1'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[2]
+          Decl_type = char_t
+          Usage = H
+          Value = '2'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[3]
+          Decl_type = char_t
+          Usage = H
+          Value = '3'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[4]
+          Decl_type = char_t
+          Usage = H
+          Value = '4'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[5]
+          Decl_type = char_t
+          Usage = H
+          Value = '5'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[6]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[7]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[8]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[9]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[10]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[11]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[12]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[13]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[14]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[15]
+          Decl_type = char_t
+          Usage = H
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[0]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[1]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[2]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[3]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[4]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[5]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[6]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[7]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[8]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[9]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[10]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[11]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[12]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[13]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[14]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[15]
+          Decl_type = char_t
+          Usage = G
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = string1
+          Decl_type = char_t []
+          Usage = O
+          Value = (char_t*)(0)
+
+        # End Removed Variable
+
+    # End Test Case
+
+$ Test Case: 3
+    # Begin Test Case
+
+      File = .\safe_sprintf.c
+      Procedure = safe_int_to_dec
+      Procedure Number = 1
+      Description = invalid string
+
+        # Begin Variable
+
+          Name = string1
+          Decl_type = char_t []
+          Usage = Z
+          Value = (char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aValue
+          Decl_type = int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = offset
+          Decl_type = const int16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = string1
+          Decl_type = char_t []
+          Usage = O
+          TBrun Analysis = Compare
+          Value = (char_t*)(0)
+
+        # End Removed Variable
+
+    # End Test Case
+
+    # Begin Global
+
+      File = .\safe_sprintf.c
+      Name = test_string
+      Decl_type = char_t
+      Bounds = 10
+      Value = {0}
+
+    # End Global
+
+# Begin Isolated Procedure
+
+  File = .\safe_sprintf.c
+  Procedure = safe_int_to_dec
+  Procedure Number = 1
+
+# End Isolated Procedure
+
+    # Begin Local Conversions
+D
+int16_t
+short
+D
+uint16_t
+unsigned short
+D
+uint8_t
+unsigned char
+I
+bool
+ldra_qq_bool_convert
+C:\LDRA_Toolsuite\c\ctbrunlib.h
+    # End Local Conversions
+
+# Begin Selected Files from Set
+
+.\safe_sprintf.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_sprintf.c
+
+# End White Files

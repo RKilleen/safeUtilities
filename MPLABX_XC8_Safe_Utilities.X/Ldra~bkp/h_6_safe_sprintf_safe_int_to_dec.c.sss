@@ -1,0 +1,1771 @@
+
+/******************************************************************************
+*
+* Copyright (C) 2019 Liverpool Data Research Associates
+*
+* Language      : C
+*
+* This is the optimised shlayout file for generating C driver programs using
+* ldra_port with option "System Executable history in a single file"
+*
+******************************************************************************/
+
+/*
+ *
+ * Harness Program
+ *
+ * Sequence Name : safe_int_to_dec
+ *
+ * Sequence File List:
+ * C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_compress.c <Excluded>
+ * C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c <Light Grey Box>
+ * C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_string.c <Excluded>
+ * C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\main.c <Excluded>
+ *
+ * Existing Test Cases ( ID Procedure File )
+ * 1 safe_int_to_dec C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+ * 2 safe_int_to_dec C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+ * 3 safe_int_to_dec C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+ *
+ * Program created on Thu Apr 08 2021 at 16:40:11
+ *
+ */
+
+#define ldra_qq_nodotdotdot
+/*
+ * To include source code before the declaration section
+ * ****7 Driver declarations in C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port_cshlayout.dat
+ * check the "Include Source Code Before Driver or Host Declarations" box
+ * in the "S & H Generation" tab of the "TBrun Options" dialog.
+ *
+ * To set this as the default for all sequences, set the
+ * profile string "TBRUN_INCLUDE_ON_TOP=TRUE" in Testbed.ini
+ * prior to invoking TBrun.
+ */
+/* ****7 Driver declarations */
+
+/******************************** LDRA_PORT_FLAGS ***********************************/
+#include "C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port_flags.h"
+/****************************** END LDRA_PORT_FLAGS *********************************/
+
+/******************************** Start Instrumentation Helper Code **********************/
+/* Define used to avoid duplicating code in black/white box */														  
+#define QQQ_SHLAYOUT
+#ifdef ldra_qq_no_constants
+#define const
+#endif
+
+void ldra_qq_set_stub_hit_count (int* last_tc, int* this_count, int* total_count);
+void ldra_qq_stub_start (char* ldra_qq_pname);
+void ldra_qq_stub_end (int ldra_qq_stub_valid, char* ldra_qq_stub_message);
+void ldra_qq_test_comment (char* fmt, int start, int new_line);
+void ldra_qq_stub_start_comment (char* ldra_qq_procname);
+void ldra_qq_stub_end_comment (char* ldra_qq_procname);
+void ldra_qq_stub_invalid_test (char** ldra_qq_stub_mess, int* ldra_qq_stub_val);
+void ldra_qq_set_stub_smho (int* ldra_qq_matrix, int* ldra_qq_index, int ldra_qq_max, int ldra_qq_stub_id, char* ldra_qq_stub_name, int ldra_qq_hc);
+
+const int ldra_qq_smho_unexecuted = 0;
+const int ldra_qq_smho_executed_correct = 1;
+const int ldra_qq_smho_executed_incorrect = -1;
+const int ldra_qq_smho_hc_terminator = -10;
+const int ldra_qq_smho_tc_terminator = -100;
+
+
+/* ****1 Globals for output */
+
+/* Stop calloc from being called */
+#define _ldra_qq_mem_alloc_
+
+/*************************** LDRA_PORT *********************************/
+#include "C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port.h"
+#include "C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port_common.h"
+#include "C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port.c"
+#include "C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port_common.c"
+/************************ END OF LDRA_PORT *****************************/
+
+int testbed_out=0;
+
+/*
+ * Setting _ldra_tbrunlib_optimised_ allows all the analysis routines in
+ * ctbrunlib.h to be optimised out to reduce the code size
+ */
+#define _ldra_tbrunlib_optimised_
+
+/*
+ * Then we can renable just the routines that we actually need
+ */
+#define _ldra_qq_BOOL_convert_
+#define _ldra_qq_bool_convert_
+#define _ldra_qq_char_convert_
+#define _ldra_qq_char_star_convert_
+#define _ldra_qq_double_convert_ 
+#define _ldra_qq_float_convert_
+#define _ldra_qq_hex_convert_
+#define _ldra_qq_long_double_convert_
+#define _ldra_qq_long_long_convert_
+#define _ldra_qq_ulong_long_convert_
+#define _ldra_qq_const_string_compare_
+#define _ldra_qq_unsigned_char_convert_
+#define _ldra_qq_string_compare_
+/* #define _ldra_qq_file_exact_compare_ */
+
+
+char testbed_buff[64];
+
+void ldra_qq_tbrun_output (char *fmt,int start,int new_line);
+#define ldra_qq_tbrun
+#define ldra_qq_tbrun_driver
+#define ldra_qq_tbrunmainuninstrumented
+#define ldra_qq_bool_used
+#define ldra_qq_tbrun_ldra_port
+#define ldra_qq_tbrun_num_files 1
+int ldra_qq_history_in_target = 1;
+char *ldra_qq_sequence_name = "safe_int_to_dec";
+int ldra_qq_quiet_stubs = 0;
+int ldra_qq_test_case_number = 0;
+int ldra_qq_last_test_case = -1;
+int ldra_qq_tc_iterator = -1;
+int ldra_qq_tc_repeater = -1;
+int ldra_qq_module_number = 0;
+char *ldra_qq_module_name = NULL;
+int ldra_qq_procedure_number = 0;
+char *ldra_qq_procedure_name = NULL;
+int ldra_qq_number_of_existing_tcs = 3;
+int ldra_qq_in_existing_test_case = 0;
+int ldra_qq_in_new_test_case = 0;
+char *ldra_qq_action_code = "";
+int inszt_confirm_enabled = 0;
+
+/*
+ * Pre-include code will be placed here
+ * this code is located at global scope and should consist of
+ * declarations, preprocessor directives (e.g. #include) or procedures
+ */
+#define LDRA_dummy_6_1
+#define qqoutput tbrun_qqoutput6
+#ifdef _MSC_VER
+#pragma message (" => Compiling source: C:\\LDRA_Workarea\\Examples\\Tlps\\Microchip\\MPLABX_XC8_Workspace\\MPLABX_XC8_Safe_Utilities.X\\inszt_safe_sprintf.c started")
+#endif
+#include "C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\inszt_safe_sprintf.c"
+#ifdef _MSC_VER
+#pragma message (" => Compiling source: C:\\LDRA_Workarea\\Examples\\Tlps\\Microchip\\MPLABX_XC8_Workspace\\MPLABX_XC8_Safe_Utilities.X\\inszt_safe_sprintf.c finished")
+#endif
+#undef qqoutput
+/*
+ * Post-include code will be placed here
+ * this code is located at global scope and should consist of
+ * declarations, preprocessor directives (e.g. #include) or procedures
+ */
+/*
+ * To include tbrunlib.h before the source code
+ * set the profile_string "TBRUNLIB_BEFORE_SOURCE=TRUE"
+ * in Testbed.ini prior to invoking TBrun
+ */
+#include "C:\LDRA_Toolsuite\C\ldra_port_ctbrunlib.h"
+
+
+/*
+ * Additional user defined globals
+ */
+char_t test_string[10] = {0};
+
+/* ****20 Stub utilities */
+
+struct ldra_qq_stub_hit_count
+{
+  int last_tc;
+  int this_count;
+  int total_count;
+};
+
+struct ldra_qq_stub_hit_order
+{
+  int total;
+  int index;
+  /*
+   * 0 = no error
+   * 1 = stub hit order total exceeded
+   * 2 = incorrect stub hit found
+   */
+  int error_code;
+};
+
+void ldra_qq_set_stub_smho (int* ldra_qq_matrix, int* ldra_qq_index, int ldra_qq_max, int ldra_qq_stub_id, char* ldra_qq_stub_name, int ldra_qq_hc)
+{
+  char ecc = '\0';
+  int ind;
+  int hc;
+  char buff[50];
+
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    do
+    {
+      if (*ldra_qq_index >= ldra_qq_max ||
+          ldra_qq_matrix[*ldra_qq_index] == ldra_qq_smho_tc_terminator)
+      {
+        /* stub hit order total exceeded */
+        ecc = 'X';
+      }
+      else if (ldra_qq_matrix[*ldra_qq_index] == ldra_qq_hc)
+      {
+        /* hit count found - look for stub id */
+        hc = *ldra_qq_index + 1;
+        ind = hc + 1;
+        while (ecc == '\0' && ldra_qq_matrix[ind] != ldra_qq_smho_hc_terminator)
+        {
+          if (ldra_qq_matrix[ind] == ldra_qq_stub_id)
+          {
+            ecc = 'P';
+            ldra_qq_matrix[hc] = 1;
+          }
+          ind++;
+        }
+        if (ecc == '\0')
+        {
+          ecc = 'F';
+          ldra_qq_matrix[hc] = -1;
+        }
+      }
+      else if (ldra_qq_matrix[*ldra_qq_index] < ldra_qq_hc)
+      {
+        /* move on to the next hit */
+        do
+        {
+          (*ldra_qq_index)++;
+        } while (ldra_qq_matrix[*ldra_qq_index] != ldra_qq_smho_hc_terminator);
+        (*ldra_qq_index)++;
+      } else {
+        /* not specified for this hit */
+        ecc = 'U';
+      }
+    } while (ecc == '\0');
+
+    ldra_qq_tbrun_output ("Y ", 1, 0);
+
+    buff[0] = ecc;
+    buff[1] = ' ';
+    buff[2] = '\0';
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_stub_id);
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_qq_tbrun_output (ldra_qq_stub_name,0,1);
+  }
+} /* end of ldra_qq_set_stub_smho */
+
+int ldra_qq_confirm_smho (int* ldra_qq_matrix, int ldra_qq_ho_total)
+{
+  int ret = 1;
+  int ldra_qq_ho_expected = 0;
+  int ec = 0;
+  char pf = 'P';
+  char buff[50];
+
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    while (*ldra_qq_matrix != ldra_qq_smho_tc_terminator)
+    {
+      ldra_qq_ho_expected = *ldra_qq_matrix;
+      ldra_qq_matrix++;
+      if (*ldra_qq_matrix == ldra_qq_smho_executed_incorrect)
+      {
+        ec |= 2;
+        pf = 'F';
+      }
+      while (*ldra_qq_matrix != ldra_qq_smho_hc_terminator)
+      {
+        ldra_qq_matrix++;
+      }
+      ldra_qq_matrix++;
+    }
+
+    if (ldra_qq_ho_expected < ldra_qq_ho_total)
+    {
+      ec |= 1;
+      pf = 'F';
+    }
+    else if (ldra_qq_ho_expected > ldra_qq_ho_total)
+    {
+      ec |= 4;
+      pf = 'F';
+    }
+
+    ldra_qq_tbrun_output ("Z ", 1, 0);
+
+    buff[0] = pf;
+    buff[1] = ' ';
+    buff[2] = '\0';
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_ho_total);
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_ho_expected);
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ec);
+    ldra_qq_tbrun_output (buff, 0, 1);
+  }
+
+  return ret;
+} /* end of ldra_qq_confirm_smho */
+
+int ldra_qq_set_stub_hit_order (struct ldra_qq_stub_hit_order* ldra_qq_stub_ho, int* ldra_qq_ho_arr, char* ldra_qq_ho_name, int ldra_qq_ho_code)
+{
+  int ret = -1;
+  int ec = 0;
+  char ecc = 'P';
+  char buff[50];
+
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    ldra_qq_stub_ho->index = ldra_qq_stub_ho->index + 1;
+    if (ldra_qq_stub_ho->index < ldra_qq_stub_ho->total)
+    {
+      if (ldra_qq_ho_arr[ldra_qq_stub_ho->index] == ldra_qq_ho_code)
+      {
+        /* return the index of the verified call */
+        ret = ldra_qq_stub_ho->index;
+      } else {
+        /* incorrect stub hit found */
+        ec = 2;
+        ecc = 'F';
+      }
+    } else {
+      /* stub hit order total exceeded */
+      ec = 1;
+      ecc = 'X';
+    }
+
+    if (ldra_qq_stub_ho->error_code == 0 && ec != 0)
+    {
+      ldra_qq_stub_ho->error_code = ec;
+    }
+
+    ldra_qq_tbrun_output ("Y ", 1, 0);
+
+    buff[0] = ecc;
+    buff[1] = ' ';
+    buff[2] = '\0';
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_stub_ho->index);
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_qq_tbrun_output (ldra_qq_ho_name, 0, 1);
+  }
+  return ret;
+} /* end of ldra_qq_set_stub_hit_order */
+
+int ldra_qq_confirm_stub_hit_order (struct ldra_qq_stub_hit_order ldra_qq_stub_ho)
+{
+  int ret = 1;
+  char pf = 'P';
+  char buff[50];
+
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    if (ldra_qq_stub_ho.error_code != 0)
+    {
+      pf = 'F';
+      ret = 0;
+    } else {
+      if ((ldra_qq_stub_ho.index + 1) != ldra_qq_stub_ho.total)
+      {
+        pf = 'F';
+        ret = 0;
+      }
+    }
+
+    ldra_qq_tbrun_output ("Z ",1,0);
+
+    buff[0] = pf;
+    buff[1] = ' ';
+    buff[2] = '\0';
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_stub_ho.total);
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_stub_ho.index);
+    ldra_qq_tbrun_output (buff, 0, 0);
+
+    ldra_sprintf1 (buff, "%d ", ldra_qq_stub_ho.error_code);
+    ldra_qq_tbrun_output (buff, 0, 1);
+  }
+  return ret;
+} /* end of ldra_qq_confirm_stub_hit_order */
+
+void ldra_qq_set_stub_hit_count (int* last_tc, int* this_count, int* total_count)
+{
+  if (*last_tc != ldra_qq_test_case_number)
+  {
+    /*
+     * the test case has changed from the last hit -
+     * so change the test case number and reset the hit count
+     */
+    *last_tc = ldra_qq_test_case_number;
+    *this_count = 0;
+  }
+  (*this_count)++;
+  (*total_count)++;
+} /* end of ldra_qq_set_stub_hit_count */
+
+void ldra_qq_stub_start (char* ldra_qq_pname)
+{
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    ldra_qq_tbrun_output ("P S ", 1, 0);
+    ldra_qq_tbrun_output (ldra_qq_pname, 0, 1);
+  }
+} /* end of ldra_qq_stub_start */
+
+void ldra_qq_stub_end (int ldra_qq_stub_valid, char* ldra_qq_stub_message)
+{
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    if (ldra_qq_stub_message == (char*)(0))
+    {
+      if (ldra_qq_stub_valid)
+      {
+        ldra_qq_tbrun_output ("P E V", 1, 1);
+      } else {
+        ldra_qq_tbrun_output ("P E F", 1, 1);
+      }
+    } else {
+      if (ldra_qq_stub_valid)
+      {
+        ldra_qq_tbrun_output ("P E V ", 1, 0);
+        ldra_qq_tbrun_output (ldra_qq_stub_message, 0, 1);
+      } else {
+        ldra_qq_tbrun_output ("P E F ", 1, 0);
+        ldra_qq_tbrun_output (ldra_qq_stub_message, 0, 1);
+      }
+    }
+  }
+} /* end of ldra_qq_stub_end */
+
+void ldra_qq_test_comment (char* fmt, int start, int new_line)
+{
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    if (fmt == (char*)(0))
+    {
+      if (start)
+      {
+        ldra_qq_tbrun_output ("M ", 1, 0);
+      }
+      ldra_qq_tbrun_output ("", 0, new_line);
+    } else {
+      if (start)
+      {
+        ldra_qq_tbrun_output ("M ", 1, 0);
+      }
+      ldra_qq_tbrun_output (fmt, 0, new_line);
+    }
+  }
+} /* end of ldra_qq_test_comment */
+
+void ldra_qq_stub_start_comment (char* ldra_qq_procname)
+{
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    ldra_qq_test_comment ("***", 1, 1);
+    if (ldra_qq_procname == (char*)(0))
+    {
+      ldra_qq_test_comment ("*** Starting Stub", 1, 1);
+    } else {
+      ldra_qq_test_comment ("*** Starting Stub : ", 1, 0);
+      ldra_qq_test_comment (ldra_qq_procname, 0, 1);
+    }
+    ldra_qq_test_comment ("***", 1, 1);
+  }
+} /* end of ldra_qq_stub_start_comment */
+
+void ldra_qq_stub_end_comment (char* ldra_qq_procname)
+{
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    ldra_qq_test_comment ("###", 1, 1);
+    if (ldra_qq_procname == (char*)(0))
+    {
+      ldra_qq_test_comment ("### Ending Stub", 1, 1);
+    } else {
+      ldra_qq_test_comment ("### Ending Stub : ", 1, 0);
+      ldra_qq_test_comment (ldra_qq_procname, 0, 1);
+    }
+    ldra_qq_test_comment ("###", 1, 1);
+  }
+} /* end of ldra_qq_stub_end_comment */
+
+void ldra_qq_stub_invalid_test (char** ldra_qq_stub_mess, int* ldra_qq_stub_val)
+{
+  *ldra_qq_stub_mess = "Test Failed";
+  *ldra_qq_stub_val = 0;
+} /* end of ldra_qq_stub_invalid_test */
+
+void ldra_qq_stub_hit_count_test (struct ldra_qq_stub_hit_count ldra_qq_stub_hc, int tcstyle, char* name, int style, int expected)
+{
+  int actual = ldra_qq_stub_hc.total_count;
+  char tcseq = 'S';
+  char pf = 'V';
+  char buff[50];
+
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    if (style == 1 || style == 2 || style == 3)
+    {
+      if (tcstyle)
+      {
+        tcseq = 'T';
+        actual = ldra_qq_stub_hc.this_count;
+      }
+      switch (style)
+      {
+        case 1:
+          /* fails if executed */
+          if (actual > 0)
+          {
+            pf = 'F';
+          }
+          break;
+        case 2:
+          /* fails if not executed */
+          if (actual < 1)
+          {
+            pf = 'F';
+          }
+          break;
+        case 3:
+          /* fails if not executed correct number of times */
+          if (actual != expected)
+          {
+            pf = 'F';
+          }
+          break;
+      }
+
+      ldra_qq_tbrun_output ("H ", 1, 0);
+
+      buff[0] = tcseq;
+      buff[1] = ' ';
+      buff[2] = '\0';
+      ldra_qq_tbrun_output (buff, 0, 0);
+
+      ldra_qq_tbrun_output (name, 0, 0);
+
+      ldra_sprintf1 (buff, " %d ", style);
+      ldra_qq_tbrun_output (buff, 0, 0);
+
+      ldra_sprintf1 (buff, "%d ", expected);
+      ldra_qq_tbrun_output (buff, 0, 0);
+
+      ldra_sprintf1 (buff, "%d ", actual);
+      ldra_qq_tbrun_output (buff, 0, 0);
+
+      buff[0] = pf;
+      buff[1] = ' ';
+      buff[2] = '\0';
+      ldra_qq_tbrun_output (buff, 0, 1);
+    }
+  }
+} /* end of ldra_qq_stub_hit_count_test */
+
+void ldra_qq_stub_hit_count_comment (struct ldra_qq_stub_hit_count ldra_qq_stub_hc)
+{
+  if (ldra_qq_quiet_stubs == 0)
+  {
+    char buff[50];
+
+    ldra_sprintf1 (buff, "%d", ldra_qq_stub_hc.this_count);
+    ldra_qq_test_comment ("Test Case Hit Count : ", 1, 0);
+    ldra_qq_test_comment (buff, 0, 1);
+
+    ldra_sprintf1 (buff,"%d",ldra_qq_stub_hc.total_count);
+    ldra_qq_test_comment ("Sequence Hit Count : ", 1, 0);
+    ldra_qq_test_comment (buff, 0, 1);
+  }
+} /* end of ldra_qq_stub_hit_count_comment */
+
+/* ****9 Action code comparison routine */
+
+#define ldra_qq_action_code_compare(A) ldra_qq_strcmp (A, ldra_qq_action_code) == 0
+
+
+/*
+ * Return declaration(s) for existing test case(s)
+ */
+bool tbrun_qq_tc1_return;
+bool tbrun_qq_tc2_return;
+bool tbrun_qq_tc3_return;
+
+static int ldra_qq_dtop_char_t (char_t expected_value,char_t actual_value,char * name,
+                                char * svalue,char df,int convert,int compare,
+                                int convert_ok,char * expstr)
+{
+char testbed_buff[64];
+  int ldra_qq_variable_converted = 1;
+  int ldra_qq_variable_passed = 1;
+  int ldra_qq_var_exception_raised = 0;
+  char ldra_qq_df_str[3];
+  int ldra_qq_saved_history_in_target = ldra_qq_history_in_target;
+  testbed_buff[0] = '\0';
+  ldra_qq_df_str[0] = df;
+  ldra_qq_df_str[1] = ' ';
+  ldra_qq_df_str[2] = '\0';
+    if (convert == 1)
+    {
+      ldra_qq_variable_converted = ldra_qq_char_convert ((char)actual_value,testbed_buff);
+    }
+  if (ldra_qq_var_exception_raised == 1)
+  {
+      ldra_qq_tbrun_output ("O X ",1,0);
+      ldra_qq_tbrun_output (ldra_qq_df_str,0,0);
+      ldra_qq_tbrun_output (name,0,1);
+    ldra_qq_variable_passed = 0;
+  }
+  else
+  {
+    if (convert > 0)
+    {
+      ldra_qq_tbrun_output ("O V ",1,0);
+      ldra_qq_tbrun_output (ldra_qq_df_str,0,0);
+      ldra_qq_tbrun_output (name,0,1);
+      ldra_qq_tbrun_output ("E ",1,0);
+      ldra_qq_tbrun_output (svalue,0,1);
+    }
+    else
+    {
+      ldra_qq_tbrun_output ("O C ",1,0);
+      ldra_qq_tbrun_output (ldra_qq_df_str,0,0);
+      ldra_qq_tbrun_output (name,0,1);
+      ldra_qq_tbrun_output ("E ",1,0);
+      ldra_qq_tbrun_output (svalue,0,1);
+    }
+    if (ldra_qq_variable_converted == 1)
+    {
+        ldra_qq_variable_passed = 0;
+        if (compare == 1)
+        {
+          if (expected_value != actual_value)
+          {
+            ldra_qq_variable_passed = 0;
+          }
+          else
+          {
+            ldra_qq_variable_passed = 1;
+          }
+        }
+    }
+    else
+    {
+      if (convert_ok == 0)
+      {
+        ldra_qq_variable_passed = ldra_qq_string_compare (expstr,testbed_buff);
+      }
+      else
+      {
+        ldra_qq_variable_passed = 0;
+      }
+    }
+    if (ldra_qq_variable_passed == 1)
+    {
+      ldra_qq_tbrun_output ("P ",1,0);
+    }
+    else
+    {
+      ldra_qq_tbrun_output ("F ",1,0);
+    }
+    ldra_qq_history_in_target = 0;
+    if (ldra_qq_variable_converted == 1)
+    {
+      ldra_qq_tbrun_output ("V",0,0);
+    }
+    else
+    {
+      ldra_qq_tbrun_output ("F",0,0);
+    }
+    if (convert > 0)
+    {
+      ldra_qq_tbrun_output (" ",0,0);
+      ldra_qq_tbrun_output (testbed_buff,0,0);
+    }
+    ldra_qq_tbrun_output ("",0,1);
+    ldra_qq_history_in_target = ldra_qq_saved_history_in_target;
+  }
+  return ldra_qq_variable_passed;
+} /* end of ldra_qq_dtop_char_t */
+
+static int ldra_qq_dtop_bool (bool expected_value,bool actual_value,char * name,
+                              char * svalue,char df,int convert,int compare,
+                              int convert_ok,char * expstr)
+{
+char testbed_buff[64];
+  int ldra_qq_variable_converted = 1;
+  int ldra_qq_variable_passed = 1;
+  int ldra_qq_var_exception_raised = 0;
+  char ldra_qq_df_str[3];
+  int ldra_qq_saved_history_in_target = ldra_qq_history_in_target;
+  testbed_buff[0] = '\0';
+  ldra_qq_df_str[0] = df;
+  ldra_qq_df_str[1] = ' ';
+  ldra_qq_df_str[2] = '\0';
+    if (convert == 1)
+    {
+      ldra_qq_variable_converted = ldra_qq_bool_convert (actual_value,testbed_buff);
+    }
+  if (ldra_qq_var_exception_raised == 1)
+  {
+      ldra_qq_tbrun_output ("O X ",1,0);
+      ldra_qq_tbrun_output (ldra_qq_df_str,0,0);
+      ldra_qq_tbrun_output (name,0,1);
+    ldra_qq_variable_passed = 0;
+  }
+  else
+  {
+    if (convert > 0)
+    {
+      ldra_qq_tbrun_output ("O V ",1,0);
+      ldra_qq_tbrun_output (ldra_qq_df_str,0,0);
+      ldra_qq_tbrun_output (name,0,1);
+      ldra_qq_tbrun_output ("E ",1,0);
+      ldra_qq_tbrun_output (svalue,0,1);
+    }
+    else
+    {
+      ldra_qq_tbrun_output ("O C ",1,0);
+      ldra_qq_tbrun_output (ldra_qq_df_str,0,0);
+      ldra_qq_tbrun_output (name,0,1);
+      ldra_qq_tbrun_output ("E ",1,0);
+      ldra_qq_tbrun_output (svalue,0,1);
+    }
+    if (ldra_qq_variable_converted == 1)
+    {
+        ldra_qq_variable_passed = 0;
+        if (compare == 1)
+        {
+          if (expected_value != actual_value)
+          {
+            ldra_qq_variable_passed = 0;
+          }
+          else
+          {
+            ldra_qq_variable_passed = 1;
+          }
+        }
+    }
+    else
+    {
+      if (convert_ok == 0)
+      {
+        ldra_qq_variable_passed = ldra_qq_string_compare (expstr,testbed_buff);
+      }
+      else
+      {
+        ldra_qq_variable_passed = 0;
+      }
+    }
+    if (ldra_qq_variable_passed == 1)
+    {
+      ldra_qq_tbrun_output ("P ",1,0);
+    }
+    else
+    {
+      ldra_qq_tbrun_output ("F ",1,0);
+    }
+    ldra_qq_history_in_target = 0;
+    if (ldra_qq_variable_converted == 1)
+    {
+      ldra_qq_tbrun_output ("V",0,0);
+    }
+    else
+    {
+      ldra_qq_tbrun_output ("F",0,0);
+    }
+    if (convert > 0)
+    {
+      ldra_qq_tbrun_output (" ",0,0);
+      ldra_qq_tbrun_output (testbed_buff,0,0);
+    }
+    ldra_qq_tbrun_output ("",0,1);
+    ldra_qq_history_in_target = ldra_qq_saved_history_in_target;
+  }
+  return ldra_qq_variable_passed;
+} /* end of ldra_qq_dtop_bool */
+
+/*
+ * Prototypes for existing test cases
+ */
+int ldra_qq_execute_test_case_1 (void);
+int ldra_qq_execute_test_case_2 (void);
+int ldra_qq_execute_test_case_3 (void);
+
+void ldra_qq_sequence_init (void)
+{
+/*
+ * Sequence initialisation code will be placed here
+ * Variables declared in this section do not have global scope
+ */
+} /* end of ldra_qq_sequence_init */
+
+void ldra_qq_sequence_cleanup (void)
+{
+/*
+ * Sequence initialisation code will be placed here
+ * Variables declared in this section do not have global scope
+ */
+} /* end of ldra_qq_sequence_cleanup */
+
+void ldra_qq_etc_completion (void)
+{
+/* ****3 Existing test case completion */
+
+
+} /* end of ldra_qq_etc_completion */
+
+int ldra_qq_etc_initialisation (void)
+{
+/* ****2 Existing test case initialisation */
+
+  testbed_out = ldra_port_open();
+  return 1;
+
+} /* end of ldra_qq_etc_initialisation */
+
+void ldra_qq_ntc_completion (void)
+{
+/* ****5 New test case completion */
+
+
+} /* end of ldra_qq_ntc_completion */
+
+int ldra_qq_ntc_initialisation (void)
+{
+/* ****4 New test case initialisation */
+
+  testbed_out = ldra_port_open();
+  return 1;
+
+} /* end of ldra_qq_ntc_initialisation */
+
+void ldra_qq_tbrun_output (char *fmt,int start,int new_line)
+{
+/* ****6 TBrun output routine */
+
+  char* s = fmt;
+
+  if (ldra_qq_history_in_target && start)
+  {
+    if (s[0] != 10)
+    {
+      if (ldra_qq_in_new_test_case)
+      {
+        ldra_port_write ("S ");
+      } else {
+        ldra_port_write ("H ");
+      }
+    }
+  }
+
+  ldra_port_write (fmt);
+
+  if (new_line)
+  {
+    ldra_port_write ("\n");
+  }
+
+
+} /* end of ldra_qq_tbrun_output */
+
+static void ldra_qq_file_tc_init_code (void)
+{
+/*
+ * File based test case initialisation code will be placed here
+ * Variables declared in this section do not have global scope
+ */
+} /* end of ldra_qq_file_tc_init_code */
+
+static void ldra_qq_file_tc_cleanup_code (void)
+{
+/*
+ * File based test case cleanup code will be placed here
+ * Variables declared in this section do not have global scope
+ */
+} /* end of ldra_qq_file_tc_cleanup_code */
+
+/*
+ *
+ * Procedure to execute test case 1
+ * Procedure to execute existing test case 1
+ * File for test case : C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+ * Procedure for test case : safe_int_to_dec
+ *
+ */
+int ldra_qq_execute_test_case_1 (void)
+{
+#ifdef _MSC_VER
+#pragma message (" => Test Case 1 started")
+#endif
+
+  int ldra_qq_test_case_passed = 1;
+  int ldra_qq_no_exception_raised = 1;
+  int ldra_qq_variable_converted = 1;
+  int ldra_qq_variable_passed = 1;
+  int ldra_qq_var_exception_raised = 0;
+/*
+ * Declarations for test case 1
+ */
+/*
+ * Test case declaration code will be placed here
+ * Variables declared in this section have local scope to the test case function
+ */
+  char_t* string1;
+  int16_t offset;
+  int16_t aValue;
+
+  ldra_qq_last_test_case = 0;
+  ldra_qq_test_case_number = 1;
+  ldra_qq_module_number = 6;
+  ldra_qq_module_name = "C:\\LDRA_Workarea\\Examples\\Tlps\\Microchip\\MPLABX_XC8_Workspace\\MPLABX_XC8_Safe_Utilities.X\\safe_sprintf.c";
+  ldra_qq_procedure_number = 1;
+  ldra_qq_procedure_name = "safe_int_to_dec";
+  ldra_qq_in_existing_test_case = 1;
+  ldra_qq_in_new_test_case = 0;
+  ldra_qq_action_code = "";
+  ldra_qq_tbrun_output ("T 1 6 1 0 V",1,1);
+/*
+ * Test case initialisation code will be placed here
+ * Variables declared in this section do not have global scope
+ * Some compilers may not allow declarations here
+ */
+
+/*
+ * Assign Input parameter applied through local - string1
+ */
+  string1 = &test_string[0];
+  ldra_qq_tbrun_output ("I V Z string1",1,1);
+  ldra_qq_tbrun_output ("E &test_string[0]",1,1);
+
+/*
+ * Assign Input parameter applied through local - offset
+ */
+  offset = 5;
+  ldra_qq_tbrun_output ("I V Z offset",1,1);
+  ldra_qq_tbrun_output ("E 5",1,1);
+
+/*
+ * Assign Input parameter applied through local - aValue
+ */
+  aValue = 12345;
+  ldra_qq_tbrun_output ("I V Z aValue",1,1);
+  ldra_qq_tbrun_output ("E 12345",1,1);
+  inszt_confirm_enabled = 1;
+/*
+ * Call Procedure for Test Case
+ */
+    tbrun_qq_tc1_return = safe_int_to_dec
+      (string1,
+       offset,
+       aValue);
+  inszt_confirm_enabled = 0;
+
+  if (ldra_qq_no_exception_raised == 1)
+  {
+    ldra_qq_tbrun_output ("C V",1,1);
+  }
+  else
+  {
+    ldra_qq_tbrun_output ("C E",1,1);
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('1',test_string[0],"test_string[0]",
+                           "'1'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('2',test_string[1],"test_string[1]",
+                           "'2'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('3',test_string[2],"test_string[2]",
+                           "'3'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('4',test_string[3],"test_string[3]",
+                           "'4'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('5',test_string[4],"test_string[4]",
+                           "'5'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t (0,test_string[5],"test_string[5]",
+                           "0",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Function result for harness
+ */
+  if (ldra_qq_dtop_bool (true,tbrun_qq_tc1_return,"%",
+                         "true",'O',1,1,
+                         1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * Test case cleanup code will be placed here
+ * Variables declared in this section do not have global scope
+ * Some compilers may not allow declarations here
+ */
+  ldra_qq_tbrun_output ("D",1,1);
+  ldra_qq_tbrun_output ("",1,1);
+
+  ldra_qq_last_test_case = -2;
+  ldra_qq_test_case_number = 0;
+  ldra_qq_tc_iterator = -1;
+  ldra_qq_tc_repeater = -1;
+  ldra_qq_module_number = 0;
+  ldra_qq_module_name = NULL;
+  ldra_qq_procedure_number = 0;
+  ldra_qq_procedure_name = NULL;
+  ldra_qq_in_existing_test_case = 0;
+  ldra_qq_action_code = "";
+
+#ifdef _MSC_VER
+#pragma message (" => Test Case 1 finished")
+#endif
+
+  return ldra_qq_test_case_passed;
+} /* end of ldra_qq_execute_test_case_1 */
+
+/*
+ *
+ * Procedure to execute test case 2
+ * Procedure to execute existing test case 2
+ * File for test case : C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+ * Procedure for test case : safe_int_to_dec
+ *
+ */
+int ldra_qq_execute_test_case_2 (void)
+{
+#ifdef _MSC_VER
+#pragma message (" => Test Case 2 started")
+#endif
+
+  int ldra_qq_test_case_passed = 1;
+  int ldra_qq_no_exception_raised = 1;
+  int ldra_qq_variable_converted = 1;
+  int ldra_qq_variable_passed = 1;
+  int ldra_qq_var_exception_raised = 0;
+/*
+ * Declarations for test case 2
+ */
+/*
+ * Test case declaration code will be placed here
+ * Variables declared in this section have local scope to the test case function
+ */
+  char_t* string1;
+  int16_t offset;
+  int16_t aValue;
+
+  ldra_qq_last_test_case = 0;
+  ldra_qq_test_case_number = 2;
+  ldra_qq_module_number = 6;
+  ldra_qq_module_name = "C:\\LDRA_Workarea\\Examples\\Tlps\\Microchip\\MPLABX_XC8_Workspace\\MPLABX_XC8_Safe_Utilities.X\\safe_sprintf.c";
+  ldra_qq_procedure_number = 1;
+  ldra_qq_procedure_name = "safe_int_to_dec";
+  ldra_qq_in_existing_test_case = 1;
+  ldra_qq_in_new_test_case = 0;
+  ldra_qq_action_code = "";
+  ldra_qq_tbrun_output ("T 2 6 1 0 V",1,1);
+/*
+ * Test case initialisation code will be placed here
+ * Variables declared in this section do not have global scope
+ * Some compilers may not allow declarations here
+ */
+
+/*
+ * Assign Input parameter applied through local - string1
+ */
+  string1 = &test_string[0];
+  ldra_qq_tbrun_output ("I V Z string1",1,1);
+  ldra_qq_tbrun_output ("E &test_string[0]",1,1);
+
+/*
+ * Assign Input parameter applied through local - offset
+ */
+  offset = 6;
+  ldra_qq_tbrun_output ("I V Z offset",1,1);
+  ldra_qq_tbrun_output ("E 6",1,1);
+
+/*
+ * Assign Input parameter applied through local - aValue
+ */
+  aValue = -12345;
+  ldra_qq_tbrun_output ("I V Z aValue",1,1);
+  ldra_qq_tbrun_output ("E -12345",1,1);
+  inszt_confirm_enabled = 1;
+/*
+ * Call Procedure for Test Case
+ */
+    tbrun_qq_tc2_return = safe_int_to_dec
+      (string1,
+       offset,
+       aValue);
+  inszt_confirm_enabled = 0;
+
+  if (ldra_qq_no_exception_raised == 1)
+  {
+    ldra_qq_tbrun_output ("C V",1,1);
+  }
+  else
+  {
+    ldra_qq_tbrun_output ("C E",1,1);
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('-',test_string[0],"test_string[0]",
+                           "'-'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('1',test_string[1],"test_string[1]",
+                           "'1'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('2',test_string[2],"test_string[2]",
+                           "'2'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('3',test_string[3],"test_string[3]",
+                           "'3'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('4',test_string[4],"test_string[4]",
+                           "'4'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t ('5',test_string[5],"test_string[5]",
+                           "'5'",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Output global for harness
+ */
+  if (ldra_qq_dtop_char_t (0,test_string[6],"test_string[6]",
+                           "0",'H',1,1,
+                           1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * check Function result for harness
+ */
+  if (ldra_qq_dtop_bool (true,tbrun_qq_tc2_return,"%",
+                         "true",'O',1,1,
+                         1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * Test case cleanup code will be placed here
+ * Variables declared in this section do not have global scope
+ * Some compilers may not allow declarations here
+ */
+  ldra_qq_tbrun_output ("D",1,1);
+  ldra_qq_tbrun_output ("",1,1);
+
+  ldra_qq_last_test_case = -3;
+  ldra_qq_test_case_number = 0;
+  ldra_qq_tc_iterator = -1;
+  ldra_qq_tc_repeater = -1;
+  ldra_qq_module_number = 0;
+  ldra_qq_module_name = NULL;
+  ldra_qq_procedure_number = 0;
+  ldra_qq_procedure_name = NULL;
+  ldra_qq_in_existing_test_case = 0;
+  ldra_qq_action_code = "";
+
+#ifdef _MSC_VER
+#pragma message (" => Test Case 2 finished")
+#endif
+
+  return ldra_qq_test_case_passed;
+} /* end of ldra_qq_execute_test_case_2 */
+
+/*
+ *
+ * Procedure to execute test case 3
+ * Procedure to execute existing test case 3
+ * File for test case : C:\LDRA_Workarea\Examples\Tlps\Microchip\MPLABX_XC8_Workspace\MPLABX_XC8_Safe_Utilities.X\safe_sprintf.c
+ * Procedure for test case : safe_int_to_dec
+ *
+ */
+int ldra_qq_execute_test_case_3 (void)
+{
+#ifdef _MSC_VER
+#pragma message (" => Test Case 3 started")
+#endif
+
+  int ldra_qq_test_case_passed = 1;
+  int ldra_qq_no_exception_raised = 1;
+  int ldra_qq_variable_converted = 1;
+  int ldra_qq_variable_passed = 1;
+  int ldra_qq_var_exception_raised = 0;
+/*
+ * Declarations for test case 3
+ */
+/*
+ * Test case declaration code will be placed here
+ * Variables declared in this section have local scope to the test case function
+ */
+  char_t* string1;
+  int16_t offset;
+  int16_t aValue;
+
+  ldra_qq_last_test_case = 0;
+  ldra_qq_test_case_number = 3;
+  ldra_qq_module_number = 6;
+  ldra_qq_module_name = "C:\\LDRA_Workarea\\Examples\\Tlps\\Microchip\\MPLABX_XC8_Workspace\\MPLABX_XC8_Safe_Utilities.X\\safe_sprintf.c";
+  ldra_qq_procedure_number = 1;
+  ldra_qq_procedure_name = "safe_int_to_dec";
+  ldra_qq_in_existing_test_case = 1;
+  ldra_qq_in_new_test_case = 0;
+  ldra_qq_action_code = "";
+  ldra_qq_tbrun_output ("T 3 6 1 0 V",1,1);
+/*
+ * Test case initialisation code will be placed here
+ * Variables declared in this section do not have global scope
+ * Some compilers may not allow declarations here
+ */
+
+/*
+ * Assign Input parameter applied through local - string1
+ */
+  string1 = (char_t*)(0);
+  ldra_qq_tbrun_output ("I V Z string1",1,1);
+  ldra_qq_tbrun_output ("E (char_t*)(0)",1,1);
+
+/*
+ * Assign Input parameter applied through local - offset
+ */
+  offset = 0;
+  ldra_qq_tbrun_output ("I V Z offset",1,1);
+  ldra_qq_tbrun_output ("E 0",1,1);
+
+/*
+ * Assign Input parameter applied through local - aValue
+ */
+  aValue = 0;
+  ldra_qq_tbrun_output ("I V Z aValue",1,1);
+  ldra_qq_tbrun_output ("E 0",1,1);
+  inszt_confirm_enabled = 1;
+/*
+ * Call Procedure for Test Case
+ */
+    tbrun_qq_tc3_return = safe_int_to_dec
+      (string1,
+       offset,
+       aValue);
+  inszt_confirm_enabled = 0;
+
+  if (ldra_qq_no_exception_raised == 1)
+  {
+    ldra_qq_tbrun_output ("C V",1,1);
+  }
+  else
+  {
+    ldra_qq_tbrun_output ("C E",1,1);
+  }
+
+/*
+ * check Function result for harness
+ */
+  if (ldra_qq_dtop_bool (false,tbrun_qq_tc3_return,"%",
+                         "false",'O',1,1,
+                         1,"") == 0)
+  {
+    ldra_qq_test_case_passed = 0;
+  }
+
+/*
+ * Test case cleanup code will be placed here
+ * Variables declared in this section do not have global scope
+ * Some compilers may not allow declarations here
+ */
+  ldra_qq_tbrun_output ("D",1,1);
+  ldra_qq_tbrun_output ("",1,1);
+
+  ldra_qq_last_test_case = -4;
+  ldra_qq_test_case_number = 0;
+  ldra_qq_tc_iterator = -1;
+  ldra_qq_tc_repeater = -1;
+  ldra_qq_module_number = 0;
+  ldra_qq_module_name = NULL;
+  ldra_qq_procedure_number = 0;
+  ldra_qq_procedure_name = NULL;
+  ldra_qq_in_existing_test_case = 0;
+  ldra_qq_action_code = "";
+
+#ifdef _MSC_VER
+#pragma message (" => Test Case 3 finished")
+#endif
+
+  return ldra_qq_test_case_passed;
+} /* end of ldra_qq_execute_test_case_3 */
+
+/* ****11 Entry-Point routine start */
+
+/******************************** LDRA_PORT_FLAGS ***********************************/
+#include "C:\LDRA_Toolsuite\Compiler_spec\Microchip\xc8\ldra_port_flags.h"
+/****************************** END LDRA_PORT_FLAGS *********************************/
+
+/******************************** Start Instrumentation Helper Code **********************/
+
+#if defined(QQQBITMAP)
+#if defined(QQQstructbitmap)
+#define QQQtbruninitbitmap
+  static void qqqqinitialise(int ii);
+  void qqqtotalupload(void);
+  void qqqtotalreset(void);
+#if defined ldra_qq_tbrun_driver && defined ldra_qq_tbrununinstrumenteddriv && defined ldra_qq_tbrunmainuninstrumented
+#if defined QQQSINGLEFILE
+  extern int qqupload_registered;
+#else
+  static void qqqupload(void);
+  int qqupload_registered = 0;
+#endif
+#endif
+#endif
+#endif
+
+#if defined(QQQtbruninitbitmap)
+  int tbrun_qqqinitialise(void)
+  {
+    qqqqinitialise(0);
+    return 0;
+  }
+#endif
+
+#if defined ldra_qq_tbrunmainuninstrumented
+#ifndef QQQnumfil
+#define QQQnumfil ldra_qq_tbrun_num_files +1  /* default setting */
+#endif  /* QQQnumfil */
+#if defined QQQCOMPRESSED_EXH && defined ldra_qq_tbrun_driver && !defined QQQFIXEDSIZE && defined QQQSINGLEFILE && !defined ldra_qq_tbrununinstrumenteddriv
+  struct qqqotag aqqqostr = { (struct qqqotag*)0,(struct qqqqtag*)0,0,0,0,0};
+#endif /* defined QQQCOMPRESSED_EXH && defined ldra_qq_tbrun_driver && !defined QQQFIXEDSIZE && defined QQQSINGLEFILE && !defined ldra_qq_tbrununinstrumenteddriv  */
+#if defined QQQSINGLEFILE
+#if defined ldra_qq_tbrun_driver
+  int zzopen = 0;
+#endif /* defined ldra_qq_tbrun_driver */
+#else
+#if !defined QQQBITMAP && !defined QQQCOMPRESSED_EXH
+  int zzopen = 0;
+#endif /* !defined QQQBITMAP && !defined QQQCOMPRESSED_EXH */
+#endif /* defined QQQSINGLEFILE */
+#if defined ldra_qq_tbrununinstrumenteddriv
+  static int qqqlast = 0;
+  static int qqqstoreused=-1;
+#endif /* defined ldra_qq_tbrununinstrumenteddriv */
+#if defined QQQtbruninitbitmap
+  int QQQfcn_ptr_num = 0;
+#ifndef LDRA_VOID_FUNC
+#define LDRA_VOID_FUNC
+  typedef void(*ldra_void_function)();
+#endif
+  ldra_void_function qqqaccumupload[QQQnumfil];
+  ldra_void_function qqqaccumreset[QQQnumfil];
+  void qqpopulate_array_fcn_ptrQQ(int x, ldra_void_function y, ldra_void_function z)
+  {
+    qqqaccumupload[x]=y;
+    qqqaccumreset[x]=z;
+    QQQfcn_ptr_num++;
+  }
+
+#if defined ldra_qq_tbrununinstrumenteddriv
+  static void qqqqinitialise(int ii)
+  {
+    qqqstoreused = -1;
+    qqqlast = 1; /* stops qqfun() calling initialise again */
+  } /* end of qqqqinitialise */
+
+#endif /* defined ldra_qq_tbrununinstrumenteddriv */
+#endif /* defined QQQtbruninitbitmap */
+
+#if defined QQQstructbitmap
+
+  /* Note : Do not need to worry about a late registration of qqqupload / 
+     qqqbitmapreset by main file
+     if the main file's qqqupload and qqqbitmapreset are visible, then you
+     would not need to declare qqqtotalupload / qqqtotalreset in the driver
+     code */
+
+  void qqqtotalupload(void)
+  {
+    int i;
+    for (i=0; i<QQQfcn_ptr_num; i++)
+    {
+      qqqaccumupload[i]();
+    }
+  }
+
+  void qqqtotalreset(void)
+  {
+    int i;
+    for (i=0; i<QQQfcn_ptr_num; i++)
+    {
+      qqqaccumreset[i]();
+    }
+  }
+
+#else
+#if defined QQQFIXEDSIZE && ! defined QQQBITMAP
+  unsigned int* qqzzglobarrb[QQQnumfil] = {0}; /*c*/
+  int qqzzglobarrm[QQQnumfil];
+  int* qqzzglobarrp[QQQnumfil] = {0};
+  int* qqzzglobarrs[QQQnumfil] = {0};
+  short qqzzglobbrns[QQQnumfil] = {0};
+  short qqzzglobmax[QQQnumfil] = {0};
+  short qqzzglobfileid[QQQnumfil] = {0};
+#endif /* defined QQQFIXEDSIZE && ! defined QQQBITMAP */
+#endif /* defined QQQstructbitmap */
+
+#if defined QQQBITMAP
+  unsigned int* qqzzglobarrb[QQQnumfil]; /*a*/
+  int* qqzzglobarrp[QQQnumfil] = {0};
+  int* qqzzglobarrs[QQQnumfil] = {0};
+  short qqzzglobmax[QQQnumfil] = {0};
+  short qqzzglobbrns[QQQnumfil] = {0};
+  short qqzzglobfileid[QQQnumfil] = {0};
+#if defined QQQSINGLEFILE
+  int qqupload_registered = 0;
+#if !defined QQQdo178b
+  static int qqqlastmcdc = 0;
+#endif
+  int QQQindicator=0;
+#endif /* QQQSINGLEFILE */
+
+#if defined ldra_qq_tbrununinstrumenteddriv
+  static void qqoutput2(char* s, int i, int j)
+  {
+    ldra_sprintf2 (&ldra_buffer[0], s, i, j); 
+    ldra_port_write (&ldra_buffer[0]); 
+  } /* end of qqoutput2 */
+
+#endif /* defined ldra_qq_tbrununinstrumenteddriv */
+#if defined QQQSINGLEFILE
+#if !defined QQQstructbitmap
+  static void qqoutput(char* s, int i)
+  {
+    ldra_sprintf2 (&ldra_buffer[0], s, i, zzfileid); 
+    ldra_port_write (&ldra_buffer[0]); 
+  } /* end of qqoutput */
+
+  void qqqzzuploadmcdc(int paqqqmcdcstr[], int paqqqmcdcstore[], int qqqbrns, int pfileid, int pqqqmaxmcdcsize)
+  {
+    int i,depth,dirn,entrycount,marker;
+    entrycount = 0;
+    marker = 0;
+    /* upload for fixed size mcdc */
+    if (paqqqmcdcstr == (int*)(0))
+    {
+      /* NULL entry implying no MC/DC information for this file, just return */
+      return;
+    }
+    for (i=0; i<=qqqbrns; i++)
+    {
+      if ( paqqqmcdcstr[i] != (-1) )
+      {
+        int nodeptr,firstnodeptr,temp;
+        if ( marker == 0 )
+        {
+          /* Bitmap MC/DC separation marker with file ID */
+          qqoutput4("%8d%8d%8d%8d\n", (-1), pfileid, (-1), (-1));
+          marker = 1;
+        }
+        nodeptr = paqqqmcdcstr[i];
+        firstnodeptr = nodeptr;
+mcdcloop:
+        if (entrycount == 10 )
+        {
+          qqoutput0("\n");
+          entrycount = 0;
+        }
+        else if (entrycount == qqzzidfield)
+        {
+          qqoutput("%8d",pfileid);
+          entrycount++;
+        }
+        qqoutput("%8d", paqqqmcdcstore[nodeptr]);
+        paqqqmcdcstore[nodeptr+1]--;
+        entrycount++;
+        if ( paqqqmcdcstore[nodeptr+2] > 0 )
+        {
+          /* follow up ptr */
+          temp = nodeptr;
+          nodeptr = paqqqmcdcstore[nodeptr+2];
+          if ( paqqqmcdcstore[nodeptr+1] == 1)
+          {
+            paqqqmcdcstore[temp+2] = 0;
+          }
+          goto mcdcloop;
+        }
+        else if ( paqqqmcdcstore[nodeptr+3] > 0 )
+        {
+          /* follow down ptr */
+          temp = nodeptr;
+          nodeptr = paqqqmcdcstore[nodeptr+3];
+          if ( paqqqmcdcstore[nodeptr+1] == 1)
+          {
+            paqqqmcdcstore[temp+3] = 0;
+          }
+          goto mcdcloop;
+        } else {
+          /* both qzero, end of expression */
+          if ( paqqqmcdcstore[firstnodeptr+1] > 0 )
+          {
+            nodeptr = firstnodeptr;
+            goto mcdcloop;
+          }
+        }
+      }
+    }
+    /* end of processing, now tidyup */
+    if ( marker == 1 && entrycount != 0 )
+    {
+      if ( entrycount == qqzzidfield)
+      {
+        qqoutput("%8d",pfileid);
+        entrycount++;
+      }
+      qqoutput("%8d",0);
+      entrycount++;
+    }
+    /* common to both fixed and variable size storage */
+    if ( entrycount != 0 )
+    {
+      if ( entrycount < 4 )
+      {
+        while ( entrycount < 3 )
+        {
+          qqoutput("%8d", 0);
+          entrycount++;
+        }
+        qqoutput2("%8d%8d", pfileid, 0);
+      }
+      qqoutput4("\n%8d%8d%8d%8d\n", 0, pfileid, 0, 0);
+    } else {
+      qqoutput4("%8d%8d%8d%8d\n", 0, pfileid, 0, 0);
+    }
+    qqqlastmcdc = 0;
+    QQQindicator = 0;
+    marker = 0;
+  } /* end of uploadmcdc */
+
+  void qqqupload(void)
+  {
+    int i, j;
+    unsigned int* pbitmaparr; 	
+    qqqlast = 0;
+    /* globally stored bitmap amd mcdc are output */
+    i = 0;
+    while ( qqzzglobbrns[i] != 0 )
+    {
+      for (j=0; j<(qqzzglobbrns[i]/8)+1; j++)
+      {
+        pbitmaparr = qqzzglobarrb[i];
+        qqoutput2("%8d%8d\n", pbitmaparr[j], qqzzglobfileid[i]);
+      }
+      qqqzzuploadmcdc(qqzzglobarrp[i], qqzzglobarrs[i], qqzzglobbrns[i], qqzzglobfileid[i], qqzzglobmax[i]);
+      i++;
+    }
+    qqqlast = 0;
+  } /* end of qqqupload */
+
+#endif /* !defined QQQstructbitmap || defined ldra_qq_tbrununinstrumenteddriv */
+#endif /* QQQSINGLEFILE */
+
+#if defined QQQSINGLEFILE && defined ldra_qq_tbrun_driver
+
+#if !defined QQQstructbitmap
+  int zqqzqz1(void)
+  {
+    if ( zzopen != 1 )
+    {
+      ldra_port_open();
+      zzopen = 1;
+    }
+    return 1;
+  }
+
+#endif /* !defined QQQstructbitmap */
+#endif /* defined QQQSINGLEFILE && defined ldra_qq_tbrun_driver */
+#endif /* defined QQQBITMAP */
+
+#if !defined QQQBITMAP && !defined QQQCOMPRESSED_EXH
+  int zqqzqz1(void)
+  {
+    if ( zzopen != 1 )
+    {
+      ldra_port_open();
+      zzopen = 1;
+    }
+    return 1;
+  } /* end of zqqzqz1 */
+
+#endif /*  !defined QQQBITMAP && !defined QQQCOMPRESSED_EXH */
+#if defined QQQstructbitmap && defined ldra_qq_tbrun_driver && !defined QQQSINGLEFILE && defined ldra_qq_tbrununinstrumenteddriv && defined ldra_qq_tbrunmainuninstrumented
+  int zzopen = 0;
+
+  int zqqzqz1(void)
+  {
+    if ( zzopen != 1 )
+    {
+      ldra_port_open();
+      zzopen = 1;
+    }
+    return 1;
+   } /* end of zqqzqz1 */
+
+  static void qqqupload(void)
+  {
+    /* uncompressed bitmap (!singlefile or mainfl) separate */
+    zqqzqz1();
+    /* bitmap separate */
+    qqqlast = 1; /* stops qqfun() calling initialise again */
+  } /* end of qqqupload */
+
+#endif /* defined QQQstructbitmap && defined ldra_qq_tbrun_driver && !defined QQQSINGLEFILE && defined ldra_qq_tbrununinstrumenteddriv && defined ldra_qq_tbrunmainuninstrumented */
+#endif /* defined ldra_qq_tbrunmainuninstrumented */
+
+/******************************** End Instrumentation Helper Code **********************/
+
+#ifdef LDRA_PORT_MAIN_RETURN
+LDRA_PORT_MAIN_RETURN LDRA_PORT_MAIN (void)
+#else
+int LDRA_PORT_MAIN (void)
+#endif
+{
+#if defined QQQtbruninitbitmap
+  int tbrun_qqq_init = tbrun_qqqinitialise();
+#endif
+
+  int ldra_qq_fail_count = 0;
+
+  ldra_qq_sequence_init ();
+
+  if (ldra_qq_etc_initialisation ())
+  {
+/*
+ * Execute existing test cases
+ */
+    if (ldra_qq_execute_test_case_1 () == 0)
+    {
+      ldra_qq_fail_count++;
+    }
+
+    if (ldra_qq_execute_test_case_2 () == 0)
+    {
+      ldra_qq_fail_count++;
+    }
+
+    if (ldra_qq_execute_test_case_3 () == 0)
+    {
+      ldra_qq_fail_count++;
+    }
+
+    ldra_qq_etc_completion ();
+
+  }
+
+  ldra_qq_sequence_cleanup ();
+
+/* ****12 Entry-Point routine end */
+
+#if defined QQQBITMAP
+#if defined (QQQstructbitmap) && defined (QQQSINGLEFILE)
+  qqqtotalupload();
+#else
+  qqqupload();
+#endif /* defined (QQQstructbitmap) && defined (QQQSINGLEFILE) */
+#endif /* QQQBITMAP */
+  ldra_port_close();
+#if LDRA_PORT_MAIN_RETURN == int
+  return 0;
+#endif
+} /* end of main */
+

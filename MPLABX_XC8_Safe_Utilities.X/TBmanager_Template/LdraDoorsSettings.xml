@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LdraDoorsGlobal>
+    <Global>
+        <DoorsPath>C:\Program Files (x86)\IBM\Rational\DOORS\9.3\bin\doors.exe</DoorsPath>
+        <FromDoorsScript>C:\LDRA_Toolsuite\Tbmanager_support_files\Doors\export_doors_requirements.dxl</FromDoorsScript>
+        <ToDoorsScript>C:\LDRA_Toolsuite\Tbmanager_support_files\Doors\doors_import.dxl</ToDoorsScript>
+        <FetchDoorsModulesScript>C:\LDRA_Toolsuite\Tbmanager_support_files\Doors\export_doors_hierarchy.dxl</FetchDoorsModulesScript>
+        <FetchDoorsAttributesScript>C:\LDRA_Toolsuite\Tbmanager_support_files\Doors\get_module_attributes.dxl</FetchDoorsAttributesScript>
+        <DatabaseConnections>
+            <DatabaseConnection databaseName="36677@FAE-MWR-2018" doorsUser="JaneWilson" name="DOORS93">
+                <DoorsDatabaseHierarchy>
+                    <DATABASE name="DOORS Database">
+                        <PROJECT name="/GCC_ARM_Cashregister">
+                            <FORMAL_MODULE name="/GCC_ARM_Cashregister/GCC_ARM_Cashregister_SLR"/>
+                            <FORMAL_MODULE name="/GCC_ARM_Cashregister/GCC_ARM_Cashregister_HLR"/>
+                            <LINK_MODULE name="/GCC_ARM_Cashregister/DOORS Links"/>
+                            <FORMAL_MODULE name="/GCC_ARM_Cashregister/GCC_ARM_Cashregister_LLR"/>
+                            <FORMAL_MODULE name="/GCC_ARM_Cashregister/GCC_ARM_Cashregister_HLT"/>
+                            <FORMAL_MODULE name="/GCC_ARM_Cashregister/GCC_ARM_Cashregister_LLT"/>
+                        </PROJECT>
+                        <PROJECT name="/Safe_Utilities">
+                            <FORMAL_MODULE name="/Safe_Utilities/SLR"/>
+                            <FORMAL_MODULE name="/Safe_Utilities/HLR"/>
+                            <LINK_MODULE name="/Safe_Utilities/DOORS Links"/>
+                            <FORMAL_MODULE name="/Safe_Utilities/LLR"/>
+                            <FORMAL_MODULE name="/Safe_Utilities/HLT"/>
+                            <FORMAL_MODULE name="/Safe_Utilities/LLT"/>
+                        </PROJECT>
+                    </DATABASE>
+                </DoorsDatabaseHierarchy>
+            </DatabaseConnection>
+        </DatabaseConnections>
+    </Global>
+</LdraDoorsGlobal>

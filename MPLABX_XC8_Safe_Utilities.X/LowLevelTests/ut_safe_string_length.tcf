@@ -1,0 +1,174 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 4
+$
+$ Test Case: 1	Procedure = safe_string_length	Description = invalid string
+$ Test Case: 2	Procedure = safe_string_length	Description = empty string
+$ Test Case: 3	Procedure = safe_string_length	Description = small string
+$ Test Case: 4	Procedure = safe_string_length	Description = long string
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check all 5 paths through the function safe_string_length.
+    # End Text
+
+    # Begin Attributes
+
+      Sequence Name = safe_string_length
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_length
+      Procedure Number = 1
+      Description = invalid string
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = const char_t []
+          Usage = Z
+          Value = (const char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = int16_t
+          Usage = O
+          Value = 0
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 2
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_length
+      Procedure Number = 1
+      Description = empty string
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = const char_t []
+          Usage = Z
+          Value = ""
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = int16_t
+          Usage = O
+          Value = 0
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 3
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_length
+      Procedure Number = 1
+      Description = small string
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "LDRA"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = int16_t
+          Usage = O
+          Value = 4
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 4
+    # Begin Test Case
+
+      File = .\safe_string.c
+      Procedure = safe_string_length
+      Procedure Number = 1
+      Description = long string
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "The quick brown fox jumps over the lazy dog"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = int16_t
+          Usage = O
+          Value = 43
+
+        # End Variable
+
+    # End Test Case
+
+# Begin Isolated Procedure
+
+  File = .\safe_string.c
+  Procedure = safe_string_length
+  Procedure Number = 1
+
+# End Isolated Procedure
+
+# Begin Selected Files from Set
+
+.\safe_string.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_string.c
+
+# End White Files

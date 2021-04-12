@@ -1,0 +1,561 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 3
+$
+$ Test Case: 1	Procedure = safe_uncompress	Description = invalid string
+$ Test Case: 2	Procedure = safe_uncompress	Description = invalid array
+$ Test Case: 3	Procedure = safe_uncompress	Description = "quick brown fox"
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check all 3 paths through the function safe_uncompress.
+    # End Text
+
+    # Begin Attributes
+
+      Sequence Name = safe_uncompress
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_uncompress
+      Procedure Number = 2
+      Description = invalid string
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = char_t []
+          Usage = Z
+          Value = (char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = anArray
+          Decl_type = const uint8_t []
+          Usage = Z
+          Value = &test_array[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = arraySize
+          Decl_type = uint16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = char_t []
+          Usage = O
+          TBrun Analysis = Compare
+          Value = (char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = arraySize
+          Decl_type = uint16_t
+          Usage = O
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 2
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_uncompress
+      Procedure Number = 2
+      Description = invalid array
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = anArray
+          Decl_type = const uint8_t []
+          Usage = Z
+          Value = (uint8_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = arraySize
+          Decl_type = uint16_t
+          Usage = Z
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = char_t []
+          Usage = O
+          TBrun Analysis = Compare
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = arraySize
+          Decl_type = uint16_t
+          Usage = O
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+    # End Test Case
+
+$ Test Case: 3
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_uncompress
+      Procedure Number = 2
+      Description = "quick brown fox"
+
+        # Begin Variable
+
+          Name = aString
+          Decl_type = char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = anArray
+          Decl_type = const uint8_t []
+          Usage = Z
+          Value = &test_array[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = arraySize
+          Decl_type = int16_t
+          Usage = Z
+          Value = 16
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[0]
+          Decl_type = char_t
+          Usage = H
+          Value = 'T'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[1]
+          Decl_type = char_t
+          Usage = H
+          Value = 'h'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[2]
+          Decl_type = char_t
+          Usage = H
+          Value = 'e'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[3]
+          Decl_type = char_t
+          Usage = H
+          Value = ' '
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[4]
+          Decl_type = char_t
+          Usage = H
+          Value = 'q'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[5]
+          Decl_type = char_t
+          Usage = H
+          Value = 'u'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[6]
+          Decl_type = char_t
+          Usage = H
+          Value = 'i'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[7]
+          Decl_type = char_t
+          Usage = H
+          Value = 'c'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[8]
+          Decl_type = char_t
+          Usage = H
+          Value = 'k'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[9]
+          Decl_type = char_t
+          Usage = H
+          Value = ' '
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[10]
+          Decl_type = char_t
+          Usage = H
+          Value = 'b'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[11]
+          Decl_type = char_t
+          Usage = H
+          Value = 'r'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[12]
+          Decl_type = char_t
+          Usage = H
+          Value = 'o'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[13]
+          Decl_type = char_t
+          Usage = H
+          Value = 'w'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[14]
+          Decl_type = char_t
+          Usage = H
+          Value = 'n'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[15]
+          Decl_type = char_t
+          Usage = H
+          Value = ' '
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[16]
+          Decl_type = char_t
+          Usage = H
+          Value = 'f'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[17]
+          Decl_type = char_t
+          Usage = H
+          Value = 'o'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[18]
+          Decl_type = char_t
+          Usage = H
+          Value = 'x'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_string[19]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = aString
+          Decl_type = char_t []
+          Usage = O
+          TBrun Analysis = Suspended
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[20]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[21]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[22]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[23]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[24]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[25]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[26]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[27]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[28]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[29]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[30]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_string[31]
+          Decl_type = char_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+    # End Test Case
+
+    # Begin Global
+
+      File = .\safe_compress.c
+      Name = test_string
+      Decl_type = char_t
+      Bounds = 32
+      Value = {0}
+
+    # End Global
+
+    # Begin Global
+
+      File = .\safe_compress.c
+      Name = test_array
+      Decl_type = uint8_t
+      Bounds = 32
+      Value = {0x54,0x74,0x19,0x14,0xAF,0xA7,0xC7,0x6B,0x90,0x58,0xFE,0xBE,0xBB,0x41,0xE6,0x37}
+
+    # End Global
+
+# Begin Isolated Procedure
+
+  File = .\safe_compress.c
+  Procedure = safe_uncompress
+  Procedure Number = 2
+
+# End Isolated Procedure
+
+    # Begin Local Conversions
+I
+bool
+ldra_qq_bool_convert
+C:\LDRA_Toolsuite\c\ctbrunlib.h
+    # End Local Conversions
+
+# Begin Selected Files from Set
+
+.\safe_compress.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_compress.c
+
+# End White Files

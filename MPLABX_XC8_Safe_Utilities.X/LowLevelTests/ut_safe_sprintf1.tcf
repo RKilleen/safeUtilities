@@ -1,0 +1,187 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 1
+$
+$ Test Case: 1	Procedure = safe_sprintf1	
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check the one path through the function safe_sprintf1.
+    # End Text
+
+    # Begin Attributes
+
+      Sequence Name = safe_sprintf1
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_sprintf.c
+      Procedure = safe_sprintf1
+      Procedure Number = 3
+
+        # Begin Variable
+
+          Name = str1
+          Decl_type = char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = format1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "%d"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = d11
+          Decl_type = int16_t
+          Usage = Z
+          Value = 1234
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = str1
+          Decl_type = char_t []
+          Usage = O
+          Value = *** Suspended ***
+
+        # End Removed Variable
+
+      # Begin TC Stub
+
+        Procedure = safe_sprintf
+  Overloading = Prototype
+
+  # Begin Overloading
+char_t []
+const char_t []
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+  # End Overloading
+
+        # Begin TC Stub Return Value
+
+          Name = %
+          Type = static bool
+          Value = true
+
+        # End TC Stub Return Value
+
+      # Begin TC Stub TC Hit Count
+
+        Setting = 3
+        Specified = 1
+      # End TC Stub TC Hit Count
+
+      # End TC Stub
+
+    # End Test Case
+
+    # Begin Global
+
+      File = .\safe_sprintf.c
+      Name = test_string
+      Decl_type = char_t
+      Bounds = 16 
+      Value = {0}
+
+    # End Global
+
+# Begin Isolated Procedure
+
+  File = .\safe_sprintf.c
+  Procedure = safe_sprintf1
+  Procedure Number = 3
+
+# End Isolated Procedure
+
+    # Begin Local Conversions
+I
+bool
+ldra_qq_bool_convert
+C:\LDRA_Toolsuite\c\ctbrunlib.h
+    # End Local Conversions
+    
+# Begin Stub
+
+  Procedure = safe_sprintf
+  Method = Managed
+  Overloading = Prototype
+
+  # Begin Overloading
+char_t []
+const char_t []
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+const int16_t
+  # End Overloading
+
+  # Begin MS Properties
+
+    # Begin Declarations
+
+    # End Declarations
+
+  # End MS Properties
+
+# End Stub
+
+# Begin Selected Files from Set
+
+.\safe_sprintf.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_sprintf.c
+
+# End White Files

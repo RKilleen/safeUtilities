@@ -1,0 +1,838 @@
+$--------------------------------------------------------------------------------------------
+$ TCF_Trimmer v2.0.5  Trimmed: 2017/07/15 20:02:49
+$ Tests: 4
+$
+$ Test Case: 1	Procedure = safe_compress	Description = empty string
+$ Test Case: 2	Procedure = safe_compress	Description = "quick brown fox"
+$ Test Case: 3	Procedure = safe_compress	Description = invalid string
+$ Test Case: 4	Procedure = safe_compress	Description = invalid array
+$--------------------------------------------------------------------------------------------
+
+ # Begin Testbed Set
+
+  SET_TYPE = SYSTEM
+  SET_NAME = MPLABX_XC8_Safe_Utilities.X
+
+    # Begin Source Files
+
+      File = .\main.c
+      File = .\safe_compress.c
+      File = .\safe_sprintf.c
+      File = .\safe_string.c
+
+    # End Source Files
+
+ # End Testbed Set
+
+    # Begin Properties
+
+      IBox = Light Grey
+
+    # End Properties
+
+    # Begin Text
+This sequence will check all 4 paths through the function safe_compress.
+    # End Text
+
+    # Begin Attributes
+
+      Sequence Name = safe_compress
+      Language Code = 2
+
+    # End Attributes
+
+$ Test Case: 1
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_compress
+      Procedure Number = 1
+      Description = empty string
+
+        # Begin Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = Z
+          Value = &test_array[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[0]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[1]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[2]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[3]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[4]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[5]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[6]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[7]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[8]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[9]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[10]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[11]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[12]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[13]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[14]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[15]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = O
+
+        # End Removed Variable
+
+    # End Test Case
+
+$ Test Case: 2
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_compress
+      Procedure Number = 1
+      Description = "quick brown fox"
+
+        # Begin Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = Z
+          Value = &test_array[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = "quick brown fox"
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[0]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 241
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[1]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'z'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[2]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'z'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[3]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 188
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[4]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 6
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[5]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 137
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[6]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 229
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[7]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 239
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[8]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 187
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[9]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 27
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[10]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'd'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[11]
+          Decl_type = uint8_t
+          Usage = H
+          Value = '~'
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[12]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 227
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[13]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 1
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[14]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = test_array[15]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = true
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = O
+
+        # End Removed Variable
+
+    # End Test Case
+
+$ Test Case: 3
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_compress
+      Procedure Number = 1
+      Description = invalid string
+
+        # Begin Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = Z
+          Value = &test_array[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = (char_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[0]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 241
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[1]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'z'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[2]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'z'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[3]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 188
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[4]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 6
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[5]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 137
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[6]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 229
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[7]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 239
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[8]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 187
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[9]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 27
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[10]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'd'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[11]
+          Decl_type = uint8_t
+          Usage = H
+          Value = '~'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[12]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 227
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[13]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 1
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[14]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[15]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = O
+
+        # End Removed Variable
+
+    # End Test Case
+
+$ Test Case: 4
+    # Begin Test Case
+
+      File = .\safe_compress.c
+      Procedure = safe_compress
+      Procedure Number = 1
+      Description = invalid array
+
+        # Begin Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = Z
+          Value = (uint8_t*)(0)
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = aString1
+          Decl_type = const char_t []
+          Usage = Z
+          Value = &test_string[0]
+
+        # End Variable
+
+        # Begin Variable
+
+          Name = %
+          Decl_type = bool
+          Usage = O
+          Value = false
+
+        # End Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[0]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 241
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[1]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'z'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[2]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'z'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[3]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 188
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[4]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 6
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[5]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 137
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[6]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 229
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[7]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 239
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[8]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 187
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[9]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 27
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[10]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 'd'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[11]
+          Decl_type = uint8_t
+          Usage = H
+          Value = '~'
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[12]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 227
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[13]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 1
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[14]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = test_array[15]
+          Decl_type = uint8_t
+          Usage = H
+          Value = 0
+
+        # End Removed Variable
+
+        # Begin Removed Variable
+
+          Name = anArray1
+          Decl_type = uint8_t []
+          Usage = O
+
+        # End Removed Variable
+
+    # End Test Case
+
+    # Begin Global
+
+      File = .\safe_compress.c
+      Name = test_string
+      Decl_type = char_t
+      Bounds = 16
+      Value = {0}
+
+    # End Global
+
+    # Begin Global
+
+      File = .\safe_compress.c
+      Name = test_array
+      Decl_type = uint8_t
+      Bounds = 16
+      Value = {0}
+
+    # End Global
+
+# Begin Isolated Procedure
+
+  File = .\safe_compress.c
+  Procedure = safe_compress
+  Procedure Number = 1
+
+# End Isolated Procedure
+
+# Begin Selected Files from Set
+
+.\safe_compress.c
+
+# End Selected Files from Set
+
+# Begin White Files
+
+.\safe_compress.c
+
+# End White Files

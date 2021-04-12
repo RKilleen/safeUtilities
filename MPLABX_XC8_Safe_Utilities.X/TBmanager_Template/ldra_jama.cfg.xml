@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings>
+    <Global>
+        <Connections>
+            <Connection name="jamacloud" port="" save="true" server="https://ldra.jamacloud.com" username="mark.richardson">
+                <Entry1>P70sX88jRm1fjC+f7Otz2qcGrnwXh/Eqz1YWK9uv1f8=</Entry1>
+            </Connection>
+        </Connections>
+    </Global>
+    <Bridges>
+        <Bridge connection="jamacloud" id="1_grp2">
+            <Types actiontype="0" importtype="1"/>
+            <LastImport file=""/>
+            <Correlations>
+                <Correlation>
+                    <name>Items: links</name>
+                    <format>$(RefReq)</format>
+                    <split>,</split>
+                    <regex var="RefReq">.+</regex>
+                    <data name="displayName">links</data>
+                    <data name="internalName">links</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Description</name>
+                    <format>$(ReqBody)</format>
+                    <split/>
+                    <regex var="ReqBody">.+</regex>
+                    <data name="displayName">Description</data>
+                    <data name="internalName">description</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Name</name>
+                    <format>$(ReqName)</format>
+                    <split/>
+                    <regex var="ReqName">.+</regex>
+                    <data name="displayName">Name</data>
+                    <data name="internalName">name</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Project ID</name>
+                    <format>$(ReqNumber)</format>
+                    <split/>
+                    <regex var="ReqNumber">.+</regex>
+                    <data name="displayName">Project ID</data>
+                    <data name="internalName">documentKey</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Verification Status</name>
+                    <format>$(ReqStatus)</format>
+                    <split/>
+                    <regex var="ReqStatus">.+</regex>
+                    <data name="displayName">Verification Status</data>
+                    <data name="internalName">verification_status$86</data>
+                    <writeable>n</writeable>
+                </Correlation>
+            </Correlations>
+            <Defaults>
+                <Default>
+                    <name>ReqType</name>
+                    <value>System</value>
+                </Default>
+            </Defaults>
+            <Filters comparisonType="0"/>
+            <Settings>
+                <Setting name="issuetype">
+                    <Entry>
+                        <name>id</name>
+                        <value>86</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>System Requirement</value>
+                    </Entry>
+                </Setting>
+                <Setting name="jamafilter"/>
+                <Setting name="jamatag"/>
+                <Setting name="project">
+                    <Entry>
+                        <name>id</name>
+                        <value>52</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Safe_Utilities</value>
+                    </Entry>
+                </Setting>
+            </Settings>
+        </Bridge>
+        <Bridge connection="jamacloud" id="1_grp3">
+            <Types actiontype="0" importtype="1"/>
+            <LastImport file=""/>
+            <Correlations>
+                <Correlation>
+                    <name>Items: links</name>
+                    <format>$(RefReq)</format>
+                    <split>,</split>
+                    <regex var="RefReq">.+</regex>
+                    <data name="displayName">links</data>
+                    <data name="internalName">links</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Description</name>
+                    <format>$(ReqBody)</format>
+                    <split/>
+                    <regex var="ReqBody">.+</regex>
+                    <data name="displayName">Description</data>
+                    <data name="internalName">description</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Name</name>
+                    <format>$(ReqName)</format>
+                    <split/>
+                    <regex var="ReqName">.+</regex>
+                    <data name="displayName">Name</data>
+                    <data name="internalName">name</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Project ID</name>
+                    <format>$(ReqNumber)</format>
+                    <split/>
+                    <regex var="ReqNumber">.+</regex>
+                    <data name="displayName">Project ID</data>
+                    <data name="internalName">documentKey</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Verification Status</name>
+                    <format>$(ReqStatus)</format>
+                    <split/>
+                    <regex var="ReqStatus">.+</regex>
+                    <data name="displayName">Verification Status</data>
+                    <data name="internalName">verification_status$112</data>
+                    <writeable>n</writeable>
+                </Correlation>
+            </Correlations>
+            <Defaults>
+                <Default>
+                    <name>ReqType</name>
+                    <value>High Level</value>
+                </Default>
+            </Defaults>
+            <Filters comparisonType="0"/>
+            <Settings>
+                <Setting name="issuetype">
+                    <Entry>
+                        <name>id</name>
+                        <value>112</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>High Level Requirement</value>
+                    </Entry>
+                </Setting>
+                <Setting name="jamafilter"/>
+                <Setting name="jamatag"/>
+                <Setting name="project">
+                    <Entry>
+                        <name>id</name>
+                        <value>52</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Safe_Utilities</value>
+                    </Entry>
+                </Setting>
+            </Settings>
+        </Bridge>
+        <Bridge connection="jamacloud" id="1_grp4">
+            <Types actiontype="0" importtype="1"/>
+            <LastImport file=""/>
+            <Correlations>
+                <Correlation>
+                    <name>Items: links</name>
+                    <format>$(RefReq)</format>
+                    <split>,</split>
+                    <regex var="RefReq">.+</regex>
+                    <data name="displayName">links</data>
+                    <data name="internalName">links</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Description</name>
+                    <format>$(ReqBody)</format>
+                    <split/>
+                    <regex var="ReqBody">.+</regex>
+                    <data name="displayName">Description</data>
+                    <data name="internalName">description</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Name</name>
+                    <format>$(ReqName)</format>
+                    <split/>
+                    <regex var="ReqName">.+</regex>
+                    <data name="displayName">Name</data>
+                    <data name="internalName">name</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Project ID</name>
+                    <format>$(ReqNumber)</format>
+                    <split/>
+                    <regex var="ReqNumber">.+</regex>
+                    <data name="displayName">Project ID</data>
+                    <data name="internalName">documentKey</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Reference</name>
+                    <format>$(Reference)</format>
+                    <split/>
+                    <regex var="Reference">.+</regex>
+                    <data name="displayName">Reference</data>
+                    <data name="internalName">reference$113</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Verification Status</name>
+                    <format>$(ReqStatus)</format>
+                    <split/>
+                    <regex var="ReqStatus">.+</regex>
+                    <data name="displayName">Verification Status</data>
+                    <data name="internalName">verification_status$113</data>
+                    <writeable>n</writeable>
+                </Correlation>
+            </Correlations>
+            <Defaults>
+                <Default>
+                    <name>ReqType</name>
+                    <value>Low Level</value>
+                </Default>
+            </Defaults>
+            <Filters comparisonType="0"/>
+            <Settings>
+                <Setting name="issuetype">
+                    <Entry>
+                        <name>id</name>
+                        <value>113</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Low Level Requirement</value>
+                    </Entry>
+                </Setting>
+                <Setting name="jamafilter"/>
+                <Setting name="jamatag"/>
+                <Setting name="project">
+                    <Entry>
+                        <name>id</name>
+                        <value>52</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Safe_Utilities</value>
+                    </Entry>
+                </Setting>
+            </Settings>
+        </Bridge>
+        <Bridge connection="jamacloud" id="1_grp6">
+            <Types actiontype="0" importtype="2"/>
+            <LastImport file=""/>
+            <Correlations>
+                <Correlation>
+                    <name>Items: Description</name>
+                    <format>$(TciDesc)</format>
+                    <split/>
+                    <regex var="TciDesc">.+</regex>
+                    <data name="displayName">Description</data>
+                    <data name="internalName">description</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Project ID</name>
+                    <format>$(TciNumber)</format>
+                    <split/>
+                    <regex var="TciNumber">.+</regex>
+                    <data name="displayName">Project ID</data>
+                    <data name="internalName">documentKey</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: links</name>
+                    <format>$(TciParent)</format>
+                    <split>,</split>
+                    <regex var="TciParent">.+</regex>
+                    <data name="displayName">links</data>
+                    <data name="internalName">links</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: TCF</name>
+                    <format>$(TCF)</format>
+                    <split/>
+                    <regex var="TCF">.+</regex>
+                    <data name="displayName">TCF</data>
+                    <data name="internalName">tcf$115</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Verification Status</name>
+                    <format>$(TciStatus)</format>
+                    <split/>
+                    <regex var="TciStatus">.+</regex>
+                    <data name="displayName">Verification Status</data>
+                    <data name="internalName">verification_status$115</data>
+                    <writeable>n</writeable>
+                </Correlation>
+            </Correlations>
+            <Defaults>
+                <Default>
+                    <name>TciType</name>
+                    <value>Unit Test</value>
+                </Default>
+            </Defaults>
+            <Filters comparisonType="0"/>
+            <Settings>
+                <Setting name="issuetype">
+                    <Entry>
+                        <name>id</name>
+                        <value>115</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Low Level Test</value>
+                    </Entry>
+                </Setting>
+                <Setting name="jamafilter"/>
+                <Setting name="jamatag"/>
+                <Setting name="project">
+                    <Entry>
+                        <name>id</name>
+                        <value>52</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Safe_Utilities</value>
+                    </Entry>
+                </Setting>
+            </Settings>
+        </Bridge>
+        <Bridge connection="jamacloud" id="1_grp5">
+            <Types actiontype="0" importtype="2"/>
+            <LastImport file=""/>
+            <Correlations>
+                <Correlation>
+                    <name>Items: Description</name>
+                    <format>$(TciDesc)</format>
+                    <split/>
+                    <regex var="TciDesc">.+</regex>
+                    <data name="displayName">Description</data>
+                    <data name="internalName">description</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Project ID</name>
+                    <format>$(TciNumber)</format>
+                    <split/>
+                    <regex var="TciNumber">.+</regex>
+                    <data name="displayName">Project ID</data>
+                    <data name="internalName">documentKey</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: links</name>
+                    <format>$(TciParent)</format>
+                    <split>,</split>
+                    <regex var="TciParent">.+</regex>
+                    <data name="displayName">links</data>
+                    <data name="internalName">links</data>
+                    <writeable>n</writeable>
+                </Correlation>
+                <Correlation>
+                    <name>Items: Verification Status</name>
+                    <format>$(TciStatus)</format>
+                    <split/>
+                    <regex var="TciStatus">.+</regex>
+                    <data name="displayName">Verification Status</data>
+                    <data name="internalName">verification_status$116</data>
+                    <writeable>n</writeable>
+                </Correlation>
+            </Correlations>
+            <Defaults>
+                <Default>
+                    <name>TciType</name>
+                    <value>External Task</value>
+                </Default>
+            </Defaults>
+            <Filters comparisonType="0"/>
+            <Settings>
+                <Setting name="issuetype">
+                    <Entry>
+                        <name>id</name>
+                        <value>116</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>High Level Test</value>
+                    </Entry>
+                </Setting>
+                <Setting name="jamafilter"/>
+                <Setting name="jamatag"/>
+                <Setting name="project">
+                    <Entry>
+                        <name>id</name>
+                        <value>52</value>
+                    </Entry>
+                    <Entry>
+                        <name>name</name>
+                        <value>Safe_Utilities</value>
+                    </Entry>
+                </Setting>
+            </Settings>
+        </Bridge>
+    </Bridges>
+</Settings>
