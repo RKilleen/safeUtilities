@@ -33,7 +33,7 @@ jobs:
         
       - name: Run static analysis on source files using LDRA
         run: |
-          cd ./MPLABX_XC8_Safe_Utilities.X/LowLevelTests/
+          cd ./MPLABX_XC8_Safe_Utilities.X/LowLevelTests
           RunUnitTests.bat
         shell: cmd
         
