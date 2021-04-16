@@ -31,9 +31,9 @@ jobs:
           Build.bat
         shell: cmd
         
-      - name: Run static analysis on main.c using LDRA
+      - name: Run static analysis on source files using LDRA
         run: |
-          cd ./MPLABX_XC8_Safe_Utilities.X/LowLevelTests
+          cd ./MPLABX_XC8_Safe_Utilities.X
           RunUnitTests.bat
         shell: cmd
         
