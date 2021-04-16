@@ -34,7 +34,7 @@ jobs:
       - name: Run static analysis on main.c using LDRA
         run: |
           cd ./MPLABX_XC8_Safe_Utilities.X/LowLevelTests
-          Run_StaticAnalysis_And_UnitTests.bat
+          RunUnitTests.bat
         shell: cmd
         
       - uses: actions/upload-artifact@v2
